@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tekram.mapper.UserMapper">
+    <!--    新增用户-注册-->
+    <insert id="addUser">
+        insert into user(account_number,password_hash,nickname)values(
+        #{accountNumber},#{passwordHash},#{nickname})
+    </insert>
+    <!--    根据账号和密码查询用户-登录-->
+    <select id="getLoginInfoByAccountAndPassward" resultType="com.tekram.pojo.User">
+        select u.* from user u
+        <where>
+            <if test="accountNumber!=null and accountNumber!=''">
+                account_number = #{accountNumber}
+            </if>
+        </where>
+
+    </select>
+
+</mapper>

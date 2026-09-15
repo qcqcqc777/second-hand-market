@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: second-hand-market
+
+  #配置数据库的连接信息
+  datasource:
+    url: jdbc:mysql://localhost:3306/second_hand_trading
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Mysql123,.
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+
+server:
+  port: 8082
+
+#Mybatis的相关配置
+mybatis:
+  mapper-locations: classpath*:com/tekram/mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    #开启驼峰命名映射开关
+    map-underscore-to-camel-case: true
+
+#spring事务管理日志
+logging:
+  level:
+    com.tekram.mapper: debug
+    org.springframework.jdbc.support.JdbcTransactionManager: debug
+
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: false
+  support-methods-arguments: false
+  page-size-zero: false

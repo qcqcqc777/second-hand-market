@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tekram.mapper.ItemMapper">
+    <!--分页查询-->
+    <select id="listItems" resultType="com.tekram.pojo.Item">
+        select i.* from item i
+        <where>
+            <if test="idleName !=null and idleName!=''">
+                i.idle_name like concat('%',#{idleName},'%')
+            </if>
+            <if test="categoryId!=null">
+                and i.category_id=#{categoryId}
+            </if>
+        </where>
+    </select>
+
+    <!--    根据id查询商品-->
+    <select id="getItemById" resultType="com.tekram.pojo.Item">
+        select i.* from item i where id=#{id}
+    </select>
+</mapper>
