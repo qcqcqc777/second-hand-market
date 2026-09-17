@@ -11,6 +11,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.server.ResponseStatusException;
 
 /** 全局异常处理器，统一将 Spring MVC 异常转换为项目的 Result 响应格式。 */
 @Slf4j
@@ -20,7 +21,19 @@ public class GlobalExceptionHandler {
     /** 请求体缺失、格式错误或无法反序列化。 */
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<Result> invalidBody(HttpMessageNotReadableException exception) {
+        for (Throwable cause = exception; cause != null; cause = cause.getCause()) {
+            if (cause instanceof UnknownFieldException) {
+                return ResponseEntity.badRequest().body(Result.error("UNKNOWN_FIELD"));
+            }
+        }
         return ResponseEntity.badRequest().body(Result.error("VALIDATION_ERROR"));
+    }
+
+    /** 使用 Spring 自带异常返回业务错误，无需为每个模块创建异常类。 */
+    @ExceptionHandler(ResponseStatusException.class)
+    public ResponseEntity<Result> businessError(ResponseStatusException exception) {
+        return ResponseEntity.status(exception.getStatusCode())
+                .body(Result.error(exception.getReason()));
     }
 
     /** @RequestParam 等请求参数缺失。 */

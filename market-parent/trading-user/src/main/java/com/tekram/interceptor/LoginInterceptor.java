@@ -28,42 +28,44 @@ public class LoginInterceptor implements HandlerInterceptor {
 
         if (authorization == null ||
                 !authorization.startsWith("Bearer ")) {
-            return unauthorized(response);
+            return unauthorized(request, response);
         }
 
         String token = authorization.substring(7).trim();
 
         try {
             // 你现有的方法会验证签名和过期时间
+            // 验证令牌并解析
             Claims claims = JwtUtils.parseJWT(token);
 
             Object id = claims.get("id");
             if (!(id instanceof Number)) {
-                return unauthorized(response);
+                return unauthorized(request, response);
             }
-
+            // 获取令牌里的用户 ID
             long userId = ((Number) id).longValue();
             if (userId <= 0) {
-                return unauthorized(response);
+                return unauthorized(request, response);
             }
 
-            // 当前请求内保存用户身份
+            //  保存到当前请求
             request.setAttribute("currentUserId", userId);
             return true;
 
         } catch (JwtException | IllegalArgumentException e) {
-            return unauthorized(response);
+            return unauthorized(request, response);
         }
     }
 
     private boolean unauthorized(
-            HttpServletResponse response) throws IOException {
+            HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         response.setContentType("application/json;charset=UTF-8");
-        response.getWriter().write(
-                "{\"code\":0,\"msg\":\"请先登录或重新登录\",\"data\":null}"
-        );
+        boolean createAddress = "POST".equalsIgnoreCase(request.getMethod())
+                && "/users/me/addresses".equals(request.getRequestURI().substring(request.getContextPath().length()));
+        String message = createAddress ? "AUTH_REQUIRED" : "请先登录或重新登录";
+        response.getWriter().write("{\"code\":0,\"msg\":\"" + message + "\",\"data\":null}");
         return false;
     }
 }

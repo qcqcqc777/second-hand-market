@@ -1,0 +1,1121 @@
+2026-09-16 11:50:16.086 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 27276 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 11:50:16.093 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 11:50:18.563 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 11:50:18.587 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 11:50:18.591 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 11:50:18.592 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 11:50:18.696 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 2505 ms
+2026-09-16 11:50:19.591 [main] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService': No qualifying bean of type 'com.tekram.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2026-09-16 11:50:19.596 [main] INFO  org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2026-09-16 11:50:19.612 [main] INFO  o.s.b.a.logging.ConditionEvaluationReportLogger-
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-09-16 11:50:19.641 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter-
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userService in com.tekram.controller.UserController required a bean of type 'com.tekram.service.UserService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.tekram.service.UserService' in your configuration.
+
+2026-09-16 11:52:29.422 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 23288 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 11:52:29.427 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 11:52:32.205 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 11:52:32.233 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 11:52:32.237 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 11:52:32.237 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 11:52:32.397 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 2899 ms
+2026-09-16 11:52:33.830 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8082"]
+2026-09-16 11:52:33.940 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat started on port 8082 (http) with context path '/'
+2026-09-16 11:52:33.949 [main] INFO  com.tekram.MarketApplication-Started MarketApplication in 5.876 seconds (process running for 7.591)
+2026-09-16 11:53:54.312 [http-nio-8082-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-16 11:53:54.327 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-09-16 11:53:54.328 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2026-09-16 11:53:54.503 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-09-16 11:53:55.409 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2ed62ed5
+2026-09-16 11:53:55.412 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-09-16 11:53:55.420 [http-nio-8082-exec-1] DEBUG c.t.m.UserMapper.getLoginInfoByAccountAndPassward-==>  Preparing: select u.* from user u WHERE account_number = ?
+2026-09-16 11:53:55.445 [http-nio-8082-exec-1] DEBUG c.t.m.UserMapper.getLoginInfoByAccountAndPassward-==> Parameters: 13800000090(String)
+2026-09-16 11:53:55.495 [http-nio-8082-exec-1] DEBUG c.t.m.UserMapper.getLoginInfoByAccountAndPassward-<==      Total: 1
+2026-09-16 11:59:30.915 [SpringApplicationShutdownHook] INFO  org.springframework.boot.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-16 11:59:31.087 [tomcat-shutdown] INFO  org.springframework.boot.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-09-16 11:59:31.167 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-09-16 11:59:31.265 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-09-16 11:59:56.559 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 39724 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 11:59:56.573 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 11:59:59.129 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 11:59:59.150 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 11:59:59.152 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 11:59:59.153 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 11:59:59.238 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 2458 ms
+2026-09-16 12:00:00.262 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8082"]
+2026-09-16 12:00:00.298 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat started on port 8082 (http) with context path '/'
+2026-09-16 12:00:00.306 [main] INFO  com.tekram.MarketApplication-Started MarketApplication in 5.289 seconds (process running for 9.379)
+2026-09-16 12:01:11.203 [http-nio-8082-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-16 12:01:11.203 [http-nio-8082-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-09-16 12:01:11.205 [http-nio-8082-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2026-09-16 12:03:25.706 [http-nio-8082-exec-6] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-09-16 12:03:26.926 [http-nio-8082-exec-6] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@679efb0
+2026-09-16 12:03:26.931 [http-nio-8082-exec-6] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-09-16 12:03:26.962 [http-nio-8082-exec-6] DEBUG c.t.m.UserMapper.getLoginInfoByAccountAndPassward-==>  Preparing: select u.* from user u WHERE account_number = ?
+2026-09-16 12:03:27.014 [http-nio-8082-exec-6] DEBUG c.t.m.UserMapper.getLoginInfoByAccountAndPassward-==> Parameters: 13800000090(String)
+2026-09-16 12:03:27.062 [http-nio-8082-exec-6] DEBUG c.t.m.UserMapper.getLoginInfoByAccountAndPassward-<==      Total: 1
+2026-09-16 12:03:42.888 [http-nio-8082-exec-7] DEBUG com.tekram.mapper.UserMapper.getUserById-==>  Preparing: select u.id,u.account_number,u.nickname,u.avatarUrl, u.userStatus,u.createTime from user u where id=?
+2026-09-16 12:03:42.890 [http-nio-8082-exec-7] DEBUG com.tekram.mapper.UserMapper.getUserById-==> Parameters: 7(Long)
+2026-09-16 12:03:43.265 [http-nio-8082-exec-7] ERROR com.tekram.handler.GlobalExceptionHandler-Unhandled request exception
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'u.avatarUrl' in 'field list'
+### The error may exist in file [D:\JavaLearn\second-hand-market\market-parent\trading-user\target\classes\com\tekram\mapper\UserMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select u.id,u.account_number,u.nickname,u.avatarUrl,         u.userStatus,u.createTime         from user u where id=?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'u.avatarUrl' in 'field list'
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:244)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:102)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:362)
+	at jdk.proxy2/jdk.proxy2.$Proxy69.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:169)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy73.getUserById(Unknown Source)
+	at com.tekram.service.impl.UserServiceImpl.getMe(UserServiceImpl.java:17)
+	at com.tekram.controller.UserController.getMe(UserController.java:22)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'u.avatarUrl' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:383)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy84.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:170)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy82.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:75)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:348)
+	... 53 common frames omitted
+2026-09-16 12:04:33.468 [SpringApplicationShutdownHook] INFO  org.springframework.boot.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-16 12:04:33.593 [tomcat-shutdown] INFO  org.springframework.boot.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-09-16 12:04:33.619 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-09-16 12:04:33.649 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-09-16 12:04:40.344 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 32420 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 12:04:40.348 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 12:04:42.100 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 12:04:42.118 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 12:04:42.120 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 12:04:42.121 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 12:04:42.193 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 1784 ms
+2026-09-16 12:04:43.165 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8082"]
+2026-09-16 12:04:43.235 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat started on port 8082 (http) with context path '/'
+2026-09-16 12:04:43.243 [main] INFO  com.tekram.MarketApplication-Started MarketApplication in 3.5 seconds (process running for 5.264)
+2026-09-16 12:04:49.978 [http-nio-8082-exec-3] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-16 12:04:49.978 [http-nio-8082-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-09-16 12:04:49.979 [http-nio-8082-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2026-09-16 12:04:50.274 [http-nio-8082-exec-3] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-09-16 12:04:50.868 [http-nio-8082-exec-3] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2da848d2
+2026-09-16 12:04:50.870 [http-nio-8082-exec-3] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-09-16 12:04:50.877 [http-nio-8082-exec-3] DEBUG com.tekram.mapper.UserMapper.getUserById-==>  Preparing: select u.id,u.account_number,u.nickname,u.avatar_url, u.user_status,u.create_time from user u where id=?
+2026-09-16 12:04:50.903 [http-nio-8082-exec-3] DEBUG com.tekram.mapper.UserMapper.getUserById-==> Parameters: 7(Long)
+2026-09-16 12:04:50.930 [http-nio-8082-exec-3] DEBUG com.tekram.mapper.UserMapper.getUserById-<==      Total: 1
+2026-09-16 12:05:54.039 [SpringApplicationShutdownHook] INFO  org.springframework.boot.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-16 12:05:54.172 [tomcat-shutdown] INFO  org.springframework.boot.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-09-16 12:05:54.176 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-09-16 12:05:54.199 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-09-16 12:05:59.760 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 14188 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 12:05:59.767 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 12:06:02.597 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 12:06:02.638 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 12:06:02.658 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 12:06:02.660 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 12:06:02.877 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 2991 ms
+2026-09-16 12:06:04.572 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8082"]
+2026-09-16 12:06:04.642 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat started on port 8082 (http) with context path '/'
+2026-09-16 12:06:04.650 [main] INFO  com.tekram.MarketApplication-Started MarketApplication in 5.92 seconds (process running for 7.487)
+2026-09-16 12:06:08.838 [http-nio-8082-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-16 12:06:08.838 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-09-16 12:06:08.839 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2026-09-16 12:06:09.205 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-09-16 12:06:09.921 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1bf9dbe6
+2026-09-16 12:06:09.924 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-09-16 12:06:09.934 [http-nio-8082-exec-1] DEBUG com.tekram.mapper.UserMapper.getUserById-==>  Preparing: select u.account_number,u.nickname,u.avatar_url, u.user_status,u.create_time from user u where id=?
+2026-09-16 12:06:09.965 [http-nio-8082-exec-1] DEBUG com.tekram.mapper.UserMapper.getUserById-==> Parameters: 7(Long)
+2026-09-16 12:06:10.002 [http-nio-8082-exec-1] DEBUG com.tekram.mapper.UserMapper.getUserById-<==      Total: 1
+2026-09-16 12:07:20.705 [SpringApplicationShutdownHook] INFO  org.springframework.boot.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-16 12:07:20.804 [tomcat-shutdown] INFO  org.springframework.boot.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-09-16 12:07:20.807 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-09-16 12:07:20.831 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-09-16 12:07:29.657 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 36928 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 12:07:29.663 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 12:07:31.903 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 12:07:31.926 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 12:07:31.930 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 12:07:31.930 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 12:07:32.036 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 2288 ms
+2026-09-16 12:07:33.516 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8082"]
+2026-09-16 12:07:33.612 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat started on port 8082 (http) with context path '/'
+2026-09-16 12:07:33.623 [main] INFO  com.tekram.MarketApplication-Started MarketApplication in 5.011 seconds (process running for 7.032)
+2026-09-16 12:07:39.258 [http-nio-8082-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-16 12:07:39.258 [http-nio-8082-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-09-16 12:07:39.262 [http-nio-8082-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 4 ms
+2026-09-16 12:07:58.840 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-09-16 12:08:02.737 [SpringApplicationShutdownHook] INFO  org.springframework.boot.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-16 12:08:02.866 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7fca2c77
+2026-09-16 12:08:02.912 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-09-16 12:08:03.001 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.getUserById-==>  Preparing: select u.account_number,u.nickname,u.avatar_url, u.user_status,u.create_time from user u where id=?
+2026-09-16 12:08:03.332 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.getUserById-==> Parameters: 7(Long)
+2026-09-16 12:08:03.683 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.getUserById-<==      Total: 1
+2026-09-16 12:08:03.837 [tomcat-shutdown] INFO  org.springframework.boot.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-09-16 12:08:03.841 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-09-16 12:08:03.852 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-09-16 12:08:25.403 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 17612 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 12:08:25.411 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 12:08:27.542 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 12:08:27.562 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 12:08:27.566 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 12:08:27.567 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 12:08:27.658 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 2139 ms
+2026-09-16 12:08:28.791 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8082"]
+2026-09-16 12:08:28.847 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat started on port 8082 (http) with context path '/'
+2026-09-16 12:08:28.857 [main] INFO  com.tekram.MarketApplication-Started MarketApplication in 4.745 seconds (process running for 6.52)
+2026-09-16 12:08:30.620 [http-nio-8082-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-16 12:08:30.621 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-09-16 12:08:30.622 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2026-09-16 12:08:43.955 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-09-16 12:08:45.618 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@a6b6da6
+2026-09-16 12:08:45.638 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-09-16 12:08:45.786 [http-nio-8082-exec-1] DEBUG com.tekram.mapper.UserMapper.getUserById-==>  Preparing: select u.account_number,u.nickname,u.avatar_url, u.user_status,u.create_time from user u where id=?
+2026-09-16 12:08:46.237 [http-nio-8082-exec-1] DEBUG com.tekram.mapper.UserMapper.getUserById-==> Parameters: 7(Long)
+2026-09-16 12:08:46.651 [http-nio-8082-exec-1] DEBUG com.tekram.mapper.UserMapper.getUserById-<==      Total: 1
+2026-09-16 12:09:40.000 [SpringApplicationShutdownHook] INFO  org.springframework.boot.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-16 12:09:40.122 [tomcat-shutdown] INFO  org.springframework.boot.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-09-16 12:09:40.125 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-09-16 12:09:40.133 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-09-16 12:09:42.980 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 4868 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 12:09:42.984 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 12:09:45.604 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 12:09:45.647 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 12:09:45.654 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 12:09:45.655 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 12:09:45.870 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 2814 ms
+2026-09-16 12:09:47.622 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8082"]
+2026-09-16 12:09:47.753 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat started on port 8082 (http) with context path '/'
+2026-09-16 12:09:47.767 [main] INFO  com.tekram.MarketApplication-Started MarketApplication in 5.408 seconds (process running for 6.701)
+2026-09-16 12:09:49.828 [http-nio-8082-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-16 12:09:49.829 [http-nio-8082-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-09-16 12:09:49.831 [http-nio-8082-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2026-09-16 12:10:26.946 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-09-16 12:10:28.039 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4a27e51a
+2026-09-16 12:10:28.043 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-09-16 12:10:28.053 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.getUserById-==>  Preparing: select u.account_number,u.nickname,u.avatar_url, u.user_status,u.create_time from user u where id=?
+2026-09-16 12:10:28.084 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.getUserById-==> Parameters: 7(Long)
+2026-09-16 12:10:28.124 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.getUserById-<==      Total: 1
+2026-09-16 12:10:52.389 [SpringApplicationShutdownHook] INFO  org.springframework.boot.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-16 12:10:52.571 [tomcat-shutdown] INFO  org.springframework.boot.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-09-16 12:10:52.577 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-09-16 12:10:52.615 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-09-16 12:12:20.709 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 40020 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 12:12:20.714 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 12:12:22.717 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 12:12:22.759 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 12:12:22.775 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 12:12:22.775 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 12:12:23.071 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 2307 ms
+2026-09-16 12:12:24.911 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8082"]
+2026-09-16 12:12:25.001 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat started on port 8082 (http) with context path '/'
+2026-09-16 12:12:25.017 [main] INFO  com.tekram.MarketApplication-Started MarketApplication in 5.059 seconds (process running for 6.551)
+2026-09-16 12:12:29.112 [http-nio-8082-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-16 12:12:29.113 [http-nio-8082-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-09-16 12:12:29.114 [http-nio-8082-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2026-09-16 12:12:35.291 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-09-16 12:12:36.163 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@69c8d07c
+2026-09-16 12:12:36.167 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-09-16 12:12:36.178 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.getUserById-==>  Preparing: select u.id,u.account_number,u.nickname,u.avatar_url, u.user_status,u.create_time from user u where id=?
+2026-09-16 12:12:36.210 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.getUserById-==> Parameters: 7(Long)
+2026-09-16 12:12:36.264 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.getUserById-<==      Total: 1
+2026-09-16 12:13:01.934 [SpringApplicationShutdownHook] INFO  org.springframework.boot.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-16 12:13:02.038 [tomcat-shutdown] INFO  org.springframework.boot.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-09-16 12:13:02.041 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-09-16 12:13:02.057 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-09-16 14:55:11.277 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 11884 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 14:55:11.335 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 14:55:15.106 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 14:55:15.151 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 14:55:15.157 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 14:55:15.157 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 14:55:15.373 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 3845 ms
+2026-09-16 14:55:18.755 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8082"]
+2026-09-16 14:55:19.056 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat started on port 8082 (http) with context path '/'
+2026-09-16 14:55:19.090 [main] INFO  com.tekram.MarketApplication-Started MarketApplication in 10.089 seconds (process running for 21.604)
+2026-09-16 14:56:02.207 [http-nio-8082-exec-3] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-16 14:56:02.207 [http-nio-8082-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-09-16 14:56:02.208 [http-nio-8082-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2026-09-16 14:56:02.820 [http-nio-8082-exec-3] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-09-16 14:56:03.744 [http-nio-8082-exec-3] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3f56ee9
+2026-09-16 14:56:03.746 [http-nio-8082-exec-3] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-09-16 14:56:03.755 [http-nio-8082-exec-3] DEBUG com.tekram.mapper.UserMapper.updateUserById-==>  Preparing: update user SET nickname=? where id=?
+2026-09-16 14:56:03.787 [http-nio-8082-exec-3] DEBUG com.tekram.mapper.UserMapper.updateUserById-==> Parameters: testupdate(String), null
+2026-09-16 14:56:03.813 [http-nio-8082-exec-3] DEBUG com.tekram.mapper.UserMapper.updateUserById-<==    Updates: 0
+2026-09-16 14:56:16.458 [http-nio-8082-exec-3] ERROR com.tekram.handler.GlobalExceptionHandler-Unhandled request exception
+org.apache.ibatis.binding.BindingException: Mapper method 'com.tekram.mapper.UserMapper.updateUserById' has an unsupported return type: class com.tekram.pojo.UserVO
+	at org.apache.ibatis.binding.MapperMethod.rowCountResult(MapperMethod.java:118)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:67)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy73.updateUserById(Unknown Source)
+	at com.tekram.service.impl.UserServiceImpl.updateMe(UserServiceImpl.java:23)
+	at com.tekram.controller.UserController.updateMe(UserController.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:650)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2026-09-16 14:56:40.510 [SpringApplicationShutdownHook] INFO  org.springframework.boot.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-16 14:56:40.626 [tomcat-shutdown] INFO  org.springframework.boot.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-09-16 14:56:40.654 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-09-16 14:56:40.686 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-09-16 14:58:36.564 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 14352 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 14:58:36.587 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 14:58:38.936 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 14:58:38.954 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 14:58:38.957 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 14:58:38.958 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 14:58:39.032 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 2359 ms
+2026-09-16 14:58:40.124 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8082"]
+2026-09-16 14:58:40.168 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat started on port 8082 (http) with context path '/'
+2026-09-16 14:58:40.176 [main] INFO  com.tekram.MarketApplication-Started MarketApplication in 4.605 seconds (process running for 6.606)
+2026-09-16 14:58:46.668 [http-nio-8082-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-16 14:58:46.668 [http-nio-8082-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-09-16 14:58:46.669 [http-nio-8082-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2026-09-16 14:58:47.540 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-09-16 14:58:48.397 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3fee7a01
+2026-09-16 14:58:48.400 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-09-16 14:58:48.411 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.updateUserById-==>  Preparing: update user SET nickname=? where id=?
+2026-09-16 14:58:48.444 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.updateUserById-==> Parameters: testupdate(String), 7(Long)
+2026-09-16 14:58:48.497 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.updateUserById-<==    Updates: 1
+2026-09-16 14:58:55.609 [http-nio-8082-exec-2] ERROR com.tekram.handler.GlobalExceptionHandler-Unhandled request exception
+org.apache.ibatis.binding.BindingException: Mapper method 'com.tekram.mapper.UserMapper.updateUserById' has an unsupported return type: class com.tekram.pojo.UserVO
+	at org.apache.ibatis.binding.MapperMethod.rowCountResult(MapperMethod.java:118)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:67)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy73.updateUserById(Unknown Source)
+	at com.tekram.service.impl.UserServiceImpl.updateMe(UserServiceImpl.java:23)
+	at com.tekram.controller.UserController.updateMe(UserController.java:27)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:650)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2026-09-16 14:59:35.753 [SpringApplicationShutdownHook] INFO  org.springframework.boot.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-16 14:59:35.851 [tomcat-shutdown] INFO  org.springframework.boot.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-09-16 14:59:35.854 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-09-16 14:59:35.879 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-09-16 14:59:47.764 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 27288 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 14:59:47.769 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 14:59:49.969 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 14:59:49.989 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 14:59:49.993 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 14:59:49.993 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 14:59:50.081 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 2218 ms
+2026-09-16 14:59:51.138 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8082"]
+2026-09-16 14:59:51.176 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat started on port 8082 (http) with context path '/'
+2026-09-16 14:59:51.184 [main] INFO  com.tekram.MarketApplication-Started MarketApplication in 4.361 seconds (process running for 6.028)
+2026-09-16 14:59:53.979 [http-nio-8082-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-16 14:59:53.980 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-09-16 14:59:53.983 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 3 ms
+2026-09-16 14:59:54.557 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-09-16 14:59:55.274 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@32ca14ec
+2026-09-16 14:59:55.278 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-09-16 14:59:55.297 [http-nio-8082-exec-1] DEBUG com.tekram.mapper.UserMapper.updateUserById-==>  Preparing: update user SET nickname=? where id=?
+2026-09-16 14:59:55.355 [http-nio-8082-exec-1] DEBUG com.tekram.mapper.UserMapper.updateUserById-==> Parameters: testupdate(String), 7(Long)
+2026-09-16 14:59:55.364 [http-nio-8082-exec-1] DEBUG com.tekram.mapper.UserMapper.updateUserById-<==    Updates: 1
+2026-09-16 15:00:09.520 [SpringApplicationShutdownHook] INFO  org.springframework.boot.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-16 15:00:09.613 [tomcat-shutdown] INFO  org.springframework.boot.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-09-16 15:00:09.615 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-09-16 15:00:09.624 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-09-16 15:06:05.210 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 32324 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 15:06:05.224 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 15:06:06.925 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 15:06:06.938 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 15:06:06.940 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 15:06:06.941 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 15:06:06.997 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 1696 ms
+2026-09-16 15:06:07.702 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8082"]
+2026-09-16 15:06:07.724 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat started on port 8082 (http) with context path '/'
+2026-09-16 15:06:07.730 [main] INFO  com.tekram.MarketApplication-Started MarketApplication in 3.226 seconds (process running for 5.908)
+2026-09-16 15:06:18.002 [http-nio-8082-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-16 15:06:18.002 [http-nio-8082-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-09-16 15:06:18.003 [http-nio-8082-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2026-09-16 15:06:18.550 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Creating new transaction with name [com.tekram.service.impl.UserServiceImpl.updateMe]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2026-09-16 15:06:18.551 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-09-16 15:06:19.376 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@112c82bc
+2026-09-16 15:06:19.379 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-09-16 15:06:19.384 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Acquired Connection [HikariProxyConnection@1477279369 wrapping com.mysql.cj.jdbc.ConnectionImpl@112c82bc] for JDBC transaction
+2026-09-16 15:06:19.387 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Switching JDBC Connection [HikariProxyConnection@1477279369 wrapping com.mysql.cj.jdbc.ConnectionImpl@112c82bc] to manual commit
+2026-09-16 15:06:19.460 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.updateUserById-==>  Preparing: update user SET nickname=? where id=?
+2026-09-16 15:06:19.519 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.updateUserById-==> Parameters: testupdate1(String), 7(Long)
+2026-09-16 15:06:19.547 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.updateUserById-<==    Updates: 1
+2026-09-16 15:06:19.554 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.getUserById-==>  Preparing: select u.id,u.account_number,u.nickname,u.avatar_url, u.user_status,u.create_time from user u where id=?
+2026-09-16 15:06:19.590 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.getUserById-==> Parameters: 7(Long)
+2026-09-16 15:06:19.642 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.getUserById-<==      Total: 1
+2026-09-16 15:06:19.652 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Initiating transaction commit
+2026-09-16 15:06:19.652 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Committing JDBC transaction on Connection [HikariProxyConnection@1477279369 wrapping com.mysql.cj.jdbc.ConnectionImpl@112c82bc]
+2026-09-16 15:06:19.661 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Releasing JDBC Connection [HikariProxyConnection@1477279369 wrapping com.mysql.cj.jdbc.ConnectionImpl@112c82bc] after transaction
+2026-09-16 15:07:17.273 [SpringApplicationShutdownHook] INFO  org.springframework.boot.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-16 15:07:17.389 [tomcat-shutdown] INFO  org.springframework.boot.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-09-16 15:07:17.392 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-09-16 15:07:17.436 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-09-16 15:39:55.081 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 20524 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 15:39:55.096 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 15:39:57.114 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 15:39:57.128 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 15:39:57.130 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 15:39:57.130 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 15:39:57.189 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 2039 ms
+2026-09-16 15:39:58.099 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8082"]
+2026-09-16 15:39:58.135 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat started on port 8082 (http) with context path '/'
+2026-09-16 15:39:58.141 [main] INFO  com.tekram.MarketApplication-Started MarketApplication in 3.771 seconds (process running for 6.191)
+2026-09-16 15:40:25.936 [http-nio-8082-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-16 15:40:25.937 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-09-16 15:40:25.938 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2026-09-16 15:40:26.248 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-09-16 15:40:27.138 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@43fbce8e
+2026-09-16 15:40:27.140 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-09-16 15:40:27.151 [http-nio-8082-exec-1] DEBUG c.t.m.UserMapper.getLoginInfoByAccountAndPassward-==>  Preparing: select u.* from user u WHERE account_number = ?
+2026-09-16 15:40:27.178 [http-nio-8082-exec-1] DEBUG c.t.m.UserMapper.getLoginInfoByAccountAndPassward-==> Parameters: 13800000090(String)
+2026-09-16 15:40:27.246 [http-nio-8082-exec-1] DEBUG c.t.m.UserMapper.getLoginInfoByAccountAndPassward-<==      Total: 1
+2026-09-16 15:40:49.953 [http-nio-8082-exec-3] DEBUG o.s.jdbc.support.JdbcTransactionManager-Creating new transaction with name [com.tekram.service.impl.UserServiceImpl.updatePasswdById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2026-09-16 15:40:49.954 [http-nio-8082-exec-3] DEBUG o.s.jdbc.support.JdbcTransactionManager-Acquired Connection [HikariProxyConnection@1088151903 wrapping com.mysql.cj.jdbc.ConnectionImpl@43fbce8e] for JDBC transaction
+2026-09-16 15:40:49.956 [http-nio-8082-exec-3] DEBUG o.s.jdbc.support.JdbcTransactionManager-Switching JDBC Connection [HikariProxyConnection@1088151903 wrapping com.mysql.cj.jdbc.ConnectionImpl@43fbce8e] to manual commit
+2026-09-16 15:40:49.962 [http-nio-8082-exec-3] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-==>  Preparing: select u.password_hash from user u where id=?
+2026-09-16 15:40:49.963 [http-nio-8082-exec-3] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-==> Parameters: 7(Long)
+2026-09-16 15:40:49.965 [http-nio-8082-exec-3] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-<==      Total: 1
+2026-09-16 15:40:50.046 [http-nio-8082-exec-3] DEBUG o.s.jdbc.support.JdbcTransactionManager-Initiating transaction commit
+2026-09-16 15:40:50.047 [http-nio-8082-exec-3] DEBUG o.s.jdbc.support.JdbcTransactionManager-Committing JDBC transaction on Connection [HikariProxyConnection@1088151903 wrapping com.mysql.cj.jdbc.ConnectionImpl@43fbce8e]
+2026-09-16 15:40:50.049 [http-nio-8082-exec-3] DEBUG o.s.jdbc.support.JdbcTransactionManager-Releasing JDBC Connection [HikariProxyConnection@1088151903 wrapping com.mysql.cj.jdbc.ConnectionImpl@43fbce8e] after transaction
+2026-09-16 15:41:11.888 [http-nio-8082-exec-4] DEBUG o.s.jdbc.support.JdbcTransactionManager-Creating new transaction with name [com.tekram.service.impl.UserServiceImpl.updatePasswdById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2026-09-16 15:41:11.889 [http-nio-8082-exec-4] DEBUG o.s.jdbc.support.JdbcTransactionManager-Acquired Connection [HikariProxyConnection@2054281229 wrapping com.mysql.cj.jdbc.ConnectionImpl@43fbce8e] for JDBC transaction
+2026-09-16 15:41:11.889 [http-nio-8082-exec-4] DEBUG o.s.jdbc.support.JdbcTransactionManager-Switching JDBC Connection [HikariProxyConnection@2054281229 wrapping com.mysql.cj.jdbc.ConnectionImpl@43fbce8e] to manual commit
+2026-09-16 15:41:11.890 [http-nio-8082-exec-4] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-==>  Preparing: select u.password_hash from user u where id=?
+2026-09-16 15:41:11.891 [http-nio-8082-exec-4] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-==> Parameters: 7(Long)
+2026-09-16 15:41:11.892 [http-nio-8082-exec-4] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-<==      Total: 1
+2026-09-16 15:41:11.968 [http-nio-8082-exec-4] WARN  o.s.security.crypto.bcrypt.BCryptPasswordEncoder-Encoded password does not look like BCrypt
+2026-09-16 15:41:11.970 [http-nio-8082-exec-4] DEBUG com.tekram.mapper.UserMapper.updatePasswdById-==>  Preparing: update user SET passwordHash=? where id=?
+2026-09-16 15:41:11.970 [http-nio-8082-exec-4] DEBUG com.tekram.mapper.UserMapper.updatePasswdById-==> Parameters: 123456(String), 7(Long)
+2026-09-16 15:41:12.300 [http-nio-8082-exec-4] DEBUG o.s.jdbc.support.JdbcTransactionManager-Initiating transaction rollback
+2026-09-16 15:41:12.301 [http-nio-8082-exec-4] DEBUG o.s.jdbc.support.JdbcTransactionManager-Rolling back JDBC transaction on Connection [HikariProxyConnection@2054281229 wrapping com.mysql.cj.jdbc.ConnectionImpl@43fbce8e]
+2026-09-16 15:41:12.302 [http-nio-8082-exec-4] DEBUG o.s.jdbc.support.JdbcTransactionManager-Releasing JDBC Connection [HikariProxyConnection@2054281229 wrapping com.mysql.cj.jdbc.ConnectionImpl@43fbce8e] after transaction
+2026-09-16 15:41:12.304 [http-nio-8082-exec-4] ERROR com.tekram.handler.GlobalExceptionHandler-Unhandled request exception
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'passwordHash' in 'field list'
+### The error may exist in file [D:\JavaLearn\second-hand-market\market-parent\trading-user\target\classes\com\tekram\mapper\UserMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: update user          SET passwordHash=?          where id=?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'passwordHash' in 'field list'
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:244)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:102)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:362)
+	at jdk.proxy2/jdk.proxy2.$Proxy69.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:249)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:67)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy73.updatePasswdById(Unknown Source)
+	at com.tekram.service.impl.UserServiceImpl.updatePasswdById(UserServiceImpl.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:133)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:371)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:130)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at com.tekram.service.impl.UserServiceImpl$$SpringCGLIB$$0.updatePasswdById(<generated>)
+	at com.tekram.controller.UserController.changePassword(UserController.java:34)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:650)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'passwordHash' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:383)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy85.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy83.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:348)
+	... 66 common frames omitted
+2026-09-16 15:41:39.488 [SpringApplicationShutdownHook] INFO  org.springframework.boot.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-16 15:41:39.594 [tomcat-shutdown] INFO  org.springframework.boot.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-09-16 15:41:39.597 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-09-16 15:41:39.622 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-09-16 15:41:44.451 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 27308 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 15:41:44.455 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 15:41:45.782 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 15:41:45.798 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 15:41:45.801 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 15:41:45.801 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 15:41:45.876 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 1354 ms
+2026-09-16 15:41:46.846 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8082"]
+2026-09-16 15:41:46.889 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat started on port 8082 (http) with context path '/'
+2026-09-16 15:41:46.904 [main] INFO  com.tekram.MarketApplication-Started MarketApplication in 3.089 seconds (process running for 4.077)
+2026-09-16 15:41:51.603 [http-nio-8082-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-16 15:41:51.603 [http-nio-8082-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-09-16 15:41:51.604 [http-nio-8082-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2026-09-16 15:41:52.059 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Creating new transaction with name [com.tekram.service.impl.UserServiceImpl.updatePasswdById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2026-09-16 15:41:52.060 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-09-16 15:41:52.744 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@384bec95
+2026-09-16 15:41:52.746 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-09-16 15:41:52.748 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Acquired Connection [HikariProxyConnection@1669405538 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95] for JDBC transaction
+2026-09-16 15:41:52.751 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Switching JDBC Connection [HikariProxyConnection@1669405538 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95] to manual commit
+2026-09-16 15:41:52.790 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-==>  Preparing: select u.password_hash from user u where id=?
+2026-09-16 15:41:52.814 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-==> Parameters: 7(Long)
+2026-09-16 15:41:52.846 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-<==      Total: 1
+2026-09-16 15:41:52.934 [http-nio-8082-exec-2] WARN  o.s.security.crypto.bcrypt.BCryptPasswordEncoder-Encoded password does not look like BCrypt
+2026-09-16 15:41:52.936 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.updatePasswdById-==>  Preparing: update user SET password_hash=? where id=?
+2026-09-16 15:41:52.936 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.updatePasswdById-==> Parameters: 123456(String), 7(Long)
+2026-09-16 15:41:52.944 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.updatePasswdById-<==    Updates: 1
+2026-09-16 15:41:52.945 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Initiating transaction commit
+2026-09-16 15:41:52.946 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Committing JDBC transaction on Connection [HikariProxyConnection@1669405538 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95]
+2026-09-16 15:41:52.962 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Releasing JDBC Connection [HikariProxyConnection@1669405538 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95] after transaction
+2026-09-16 15:42:05.688 [http-nio-8082-exec-3] DEBUG o.s.jdbc.support.JdbcTransactionManager-Creating new transaction with name [com.tekram.service.impl.UserServiceImpl.updatePasswdById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2026-09-16 15:42:05.689 [http-nio-8082-exec-3] DEBUG o.s.jdbc.support.JdbcTransactionManager-Acquired Connection [HikariProxyConnection@50269090 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95] for JDBC transaction
+2026-09-16 15:42:05.689 [http-nio-8082-exec-3] DEBUG o.s.jdbc.support.JdbcTransactionManager-Switching JDBC Connection [HikariProxyConnection@50269090 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95] to manual commit
+2026-09-16 15:42:05.690 [http-nio-8082-exec-3] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-==>  Preparing: select u.password_hash from user u where id=?
+2026-09-16 15:42:05.690 [http-nio-8082-exec-3] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-==> Parameters: 7(Long)
+2026-09-16 15:42:05.691 [http-nio-8082-exec-3] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-<==      Total: 1
+2026-09-16 15:42:05.691 [http-nio-8082-exec-3] WARN  o.s.security.crypto.bcrypt.BCryptPasswordEncoder-Encoded password does not look like BCrypt
+2026-09-16 15:42:05.691 [http-nio-8082-exec-3] DEBUG o.s.jdbc.support.JdbcTransactionManager-Initiating transaction commit
+2026-09-16 15:42:05.691 [http-nio-8082-exec-3] DEBUG o.s.jdbc.support.JdbcTransactionManager-Committing JDBC transaction on Connection [HikariProxyConnection@50269090 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95]
+2026-09-16 15:42:05.692 [http-nio-8082-exec-3] DEBUG o.s.jdbc.support.JdbcTransactionManager-Releasing JDBC Connection [HikariProxyConnection@50269090 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95] after transaction
+2026-09-16 15:43:30.280 [http-nio-8082-exec-9] DEBUG o.s.jdbc.support.JdbcTransactionManager-Creating new transaction with name [com.tekram.service.impl.UserServiceImpl.updatePasswdById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2026-09-16 15:43:30.297 [http-nio-8082-exec-9] DEBUG o.s.jdbc.support.JdbcTransactionManager-Acquired Connection [HikariProxyConnection@44203936 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95] for JDBC transaction
+2026-09-16 15:43:30.297 [http-nio-8082-exec-9] DEBUG o.s.jdbc.support.JdbcTransactionManager-Switching JDBC Connection [HikariProxyConnection@44203936 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95] to manual commit
+2026-09-16 15:43:30.308 [http-nio-8082-exec-9] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-==>  Preparing: select u.password_hash from user u where id=?
+2026-09-16 15:43:30.311 [http-nio-8082-exec-9] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-==> Parameters: 7(Long)
+2026-09-16 15:43:30.316 [http-nio-8082-exec-9] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-<==      Total: 1
+2026-09-16 15:43:30.317 [http-nio-8082-exec-9] WARN  o.s.security.crypto.bcrypt.BCryptPasswordEncoder-Encoded password does not look like BCrypt
+2026-09-16 15:43:30.317 [http-nio-8082-exec-9] DEBUG o.s.jdbc.support.JdbcTransactionManager-Initiating transaction commit
+2026-09-16 15:43:30.317 [http-nio-8082-exec-9] DEBUG o.s.jdbc.support.JdbcTransactionManager-Committing JDBC transaction on Connection [HikariProxyConnection@44203936 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95]
+2026-09-16 15:43:30.319 [http-nio-8082-exec-9] DEBUG o.s.jdbc.support.JdbcTransactionManager-Releasing JDBC Connection [HikariProxyConnection@44203936 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95] after transaction
+2026-09-16 15:43:41.453 [http-nio-8082-exec-10] DEBUG o.s.jdbc.support.JdbcTransactionManager-Creating new transaction with name [com.tekram.service.impl.UserServiceImpl.updatePasswdById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2026-09-16 15:43:41.454 [http-nio-8082-exec-10] DEBUG o.s.jdbc.support.JdbcTransactionManager-Acquired Connection [HikariProxyConnection@535042379 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95] for JDBC transaction
+2026-09-16 15:43:41.454 [http-nio-8082-exec-10] DEBUG o.s.jdbc.support.JdbcTransactionManager-Switching JDBC Connection [HikariProxyConnection@535042379 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95] to manual commit
+2026-09-16 15:43:41.454 [http-nio-8082-exec-10] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-==>  Preparing: select u.password_hash from user u where id=?
+2026-09-16 15:43:41.455 [http-nio-8082-exec-10] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-==> Parameters: 7(Long)
+2026-09-16 15:43:41.456 [http-nio-8082-exec-10] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-<==      Total: 1
+2026-09-16 15:43:41.456 [http-nio-8082-exec-10] WARN  o.s.security.crypto.bcrypt.BCryptPasswordEncoder-Encoded password does not look like BCrypt
+2026-09-16 15:43:41.456 [http-nio-8082-exec-10] DEBUG o.s.jdbc.support.JdbcTransactionManager-Initiating transaction commit
+2026-09-16 15:43:41.456 [http-nio-8082-exec-10] DEBUG o.s.jdbc.support.JdbcTransactionManager-Committing JDBC transaction on Connection [HikariProxyConnection@535042379 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95]
+2026-09-16 15:43:41.457 [http-nio-8082-exec-10] DEBUG o.s.jdbc.support.JdbcTransactionManager-Releasing JDBC Connection [HikariProxyConnection@535042379 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95] after transaction
+2026-09-16 15:44:43.850 [http-nio-8082-exec-6] DEBUG com.tekram.mapper.UserMapper.addUser-==>  Preparing: insert into user(account_number,password_hash,nickname)values( ?,?,?)
+2026-09-16 15:44:43.855 [http-nio-8082-exec-6] DEBUG com.tekram.mapper.UserMapper.addUser-==> Parameters: 13800000070(String), $2a$10$WWxAUNGZG00K4bMZdytEqOTEOdRlckyTEgiZWqxr7M2y.pE6Rzkam(String), 练习买家(String)
+2026-09-16 15:44:43.884 [http-nio-8082-exec-6] DEBUG com.tekram.mapper.UserMapper.addUser-<==    Updates: 1
+2026-09-16 15:45:15.099 [http-nio-8082-exec-1] DEBUG c.t.m.UserMapper.getLoginInfoByAccountAndPassward-==>  Preparing: select u.* from user u WHERE account_number = ?
+2026-09-16 15:45:15.100 [http-nio-8082-exec-1] DEBUG c.t.m.UserMapper.getLoginInfoByAccountAndPassward-==> Parameters: 13800000070(String)
+2026-09-16 15:45:15.152 [http-nio-8082-exec-1] DEBUG c.t.m.UserMapper.getLoginInfoByAccountAndPassward-<==      Total: 1
+2026-09-16 15:45:54.873 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Creating new transaction with name [com.tekram.service.impl.UserServiceImpl.updatePasswdById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2026-09-16 15:45:54.875 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Acquired Connection [HikariProxyConnection@1254647437 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95] for JDBC transaction
+2026-09-16 15:45:54.875 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Switching JDBC Connection [HikariProxyConnection@1254647437 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95] to manual commit
+2026-09-16 15:45:54.876 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-==>  Preparing: select u.password_hash from user u where id=?
+2026-09-16 15:45:54.877 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-==> Parameters: 9(Long)
+2026-09-16 15:45:54.878 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-<==      Total: 1
+2026-09-16 15:45:54.985 [http-nio-8082-exec-2] WARN  o.s.security.crypto.bcrypt.BCryptPasswordEncoder-Encoded password does not look like BCrypt
+2026-09-16 15:45:54.987 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.updatePasswdById-==>  Preparing: update user SET password_hash=? where id=?
+2026-09-16 15:45:54.987 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.updatePasswdById-==> Parameters: 123456(String), 9(Long)
+2026-09-16 15:45:54.999 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.UserMapper.updatePasswdById-<==    Updates: 1
+2026-09-16 15:45:54.999 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Initiating transaction commit
+2026-09-16 15:45:54.999 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Committing JDBC transaction on Connection [HikariProxyConnection@1254647437 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95]
+2026-09-16 15:45:55.005 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Releasing JDBC Connection [HikariProxyConnection@1254647437 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95] after transaction
+2026-09-16 15:46:48.672 [http-nio-8082-exec-3] DEBUG o.s.jdbc.support.JdbcTransactionManager-Creating new transaction with name [com.tekram.service.impl.UserServiceImpl.updatePasswdById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2026-09-16 15:46:48.674 [http-nio-8082-exec-3] DEBUG o.s.jdbc.support.JdbcTransactionManager-Acquired Connection [HikariProxyConnection@1811212660 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95] for JDBC transaction
+2026-09-16 15:46:48.674 [http-nio-8082-exec-3] DEBUG o.s.jdbc.support.JdbcTransactionManager-Switching JDBC Connection [HikariProxyConnection@1811212660 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95] to manual commit
+2026-09-16 15:46:48.676 [http-nio-8082-exec-3] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-==>  Preparing: select u.password_hash from user u where id=?
+2026-09-16 15:46:48.677 [http-nio-8082-exec-3] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-==> Parameters: 9(Long)
+2026-09-16 15:46:48.686 [http-nio-8082-exec-3] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-<==      Total: 1
+2026-09-16 15:46:48.687 [http-nio-8082-exec-3] WARN  o.s.security.crypto.bcrypt.BCryptPasswordEncoder-Encoded password does not look like BCrypt
+2026-09-16 15:46:48.687 [http-nio-8082-exec-3] DEBUG o.s.jdbc.support.JdbcTransactionManager-Initiating transaction commit
+2026-09-16 15:46:48.687 [http-nio-8082-exec-3] DEBUG o.s.jdbc.support.JdbcTransactionManager-Committing JDBC transaction on Connection [HikariProxyConnection@1811212660 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95]
+2026-09-16 15:46:48.689 [http-nio-8082-exec-3] DEBUG o.s.jdbc.support.JdbcTransactionManager-Releasing JDBC Connection [HikariProxyConnection@1811212660 wrapping com.mysql.cj.jdbc.ConnectionImpl@384bec95] after transaction
+2026-09-16 16:09:55.652 [SpringApplicationShutdownHook] INFO  org.springframework.boot.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-16 16:09:55.828 [tomcat-shutdown] INFO  org.springframework.boot.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-09-16 16:09:55.956 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-09-16 16:09:56.008 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-09-16 16:16:30.023 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 15148 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 16:16:30.053 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 16:16:33.128 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 16:16:33.151 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 16:16:33.155 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 16:16:33.155 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 16:16:33.270 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 3131 ms
+2026-09-16 16:16:34.716 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8082"]
+2026-09-16 16:16:34.754 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat started on port 8082 (http) with context path '/'
+2026-09-16 16:16:34.771 [main] INFO  com.tekram.MarketApplication-Started MarketApplication in 5.622 seconds (process running for 9.25)
+2026-09-16 16:17:20.079 [http-nio-8082-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-16 16:17:20.080 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-09-16 16:17:20.083 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2026-09-16 16:17:20.792 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-09-16 16:17:22.612 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5d91bb26
+2026-09-16 16:17:22.619 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-09-16 16:17:22.646 [http-nio-8082-exec-1] DEBUG com.tekram.mapper.UserMapper.addUser-==>  Preparing: insert into user(account_number,password_hash,nickname)values( ?,?,?)
+2026-09-16 16:17:22.741 [http-nio-8082-exec-1] DEBUG com.tekram.mapper.UserMapper.addUser-==> Parameters: 13800000077(String), $2a$10$BXOnOkz102ParsI.YBQNweX8HWwGPVZt2UYwIZwiztC6A2bSrY3BC(String), test(String)
+2026-09-16 16:17:22.781 [http-nio-8082-exec-1] DEBUG com.tekram.mapper.UserMapper.addUser-<==    Updates: 1
+2026-09-16 16:17:52.098 [http-nio-8082-exec-3] DEBUG c.t.m.UserMapper.getLoginInfoByAccountAndPassward-==>  Preparing: select u.* from user u WHERE account_number = ?
+2026-09-16 16:17:52.099 [http-nio-8082-exec-3] DEBUG c.t.m.UserMapper.getLoginInfoByAccountAndPassward-==> Parameters: 13800000077(String)
+2026-09-16 16:17:52.149 [http-nio-8082-exec-3] DEBUG c.t.m.UserMapper.getLoginInfoByAccountAndPassward-<==      Total: 1
+2026-09-16 16:18:39.243 [http-nio-8082-exec-4] DEBUG o.s.jdbc.support.JdbcTransactionManager-Creating new transaction with name [com.tekram.service.impl.UserServiceImpl.updatePasswdById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2026-09-16 16:18:39.248 [http-nio-8082-exec-4] DEBUG o.s.jdbc.support.JdbcTransactionManager-Acquired Connection [HikariProxyConnection@1641083597 wrapping com.mysql.cj.jdbc.ConnectionImpl@5d91bb26] for JDBC transaction
+2026-09-16 16:18:39.253 [http-nio-8082-exec-4] DEBUG o.s.jdbc.support.JdbcTransactionManager-Switching JDBC Connection [HikariProxyConnection@1641083597 wrapping com.mysql.cj.jdbc.ConnectionImpl@5d91bb26] to manual commit
+2026-09-16 16:18:39.255 [http-nio-8082-exec-4] DEBUG o.s.jdbc.support.JdbcTransactionManager-Initiating transaction commit
+2026-09-16 16:18:39.257 [http-nio-8082-exec-4] DEBUG o.s.jdbc.support.JdbcTransactionManager-Committing JDBC transaction on Connection [HikariProxyConnection@1641083597 wrapping com.mysql.cj.jdbc.ConnectionImpl@5d91bb26]
+2026-09-16 16:18:39.264 [http-nio-8082-exec-4] DEBUG o.s.jdbc.support.JdbcTransactionManager-Releasing JDBC Connection [HikariProxyConnection@1641083597 wrapping com.mysql.cj.jdbc.ConnectionImpl@5d91bb26] after transaction
+2026-09-16 16:19:14.818 [http-nio-8082-exec-5] DEBUG o.s.jdbc.support.JdbcTransactionManager-Creating new transaction with name [com.tekram.service.impl.UserServiceImpl.updatePasswdById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2026-09-16 16:19:14.819 [http-nio-8082-exec-5] DEBUG o.s.jdbc.support.JdbcTransactionManager-Acquired Connection [HikariProxyConnection@2054281229 wrapping com.mysql.cj.jdbc.ConnectionImpl@5d91bb26] for JDBC transaction
+2026-09-16 16:19:14.819 [http-nio-8082-exec-5] DEBUG o.s.jdbc.support.JdbcTransactionManager-Switching JDBC Connection [HikariProxyConnection@2054281229 wrapping com.mysql.cj.jdbc.ConnectionImpl@5d91bb26] to manual commit
+2026-09-16 16:19:14.823 [http-nio-8082-exec-5] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-==>  Preparing: select u.password_hash from user u where id=?
+2026-09-16 16:19:14.823 [http-nio-8082-exec-5] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-==> Parameters: 10(Long)
+2026-09-16 16:19:14.825 [http-nio-8082-exec-5] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-<==      Total: 1
+2026-09-16 16:19:14.984 [http-nio-8082-exec-5] DEBUG com.tekram.mapper.UserMapper.updatePasswdById-==>  Preparing: update user SET password_hash=? where id=?
+2026-09-16 16:19:14.984 [http-nio-8082-exec-5] DEBUG com.tekram.mapper.UserMapper.updatePasswdById-==> Parameters: $2a$10$sHDW/B1FYm/hHGVJF.2G7ejuF4QMR.HdU/1kgiSpal.tFBeI89FRO(String), 10(Long)
+2026-09-16 16:19:14.989 [http-nio-8082-exec-5] DEBUG com.tekram.mapper.UserMapper.updatePasswdById-<==    Updates: 1
+2026-09-16 16:19:14.990 [http-nio-8082-exec-5] DEBUG o.s.jdbc.support.JdbcTransactionManager-Initiating transaction commit
+2026-09-16 16:19:14.990 [http-nio-8082-exec-5] DEBUG o.s.jdbc.support.JdbcTransactionManager-Committing JDBC transaction on Connection [HikariProxyConnection@2054281229 wrapping com.mysql.cj.jdbc.ConnectionImpl@5d91bb26]
+2026-09-16 16:19:14.995 [http-nio-8082-exec-5] DEBUG o.s.jdbc.support.JdbcTransactionManager-Releasing JDBC Connection [HikariProxyConnection@2054281229 wrapping com.mysql.cj.jdbc.ConnectionImpl@5d91bb26] after transaction
+2026-09-16 16:19:43.126 [http-nio-8082-exec-6] DEBUG o.s.jdbc.support.JdbcTransactionManager-Creating new transaction with name [com.tekram.service.impl.UserServiceImpl.updatePasswdById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2026-09-16 16:19:43.127 [http-nio-8082-exec-6] DEBUG o.s.jdbc.support.JdbcTransactionManager-Acquired Connection [HikariProxyConnection@1644586781 wrapping com.mysql.cj.jdbc.ConnectionImpl@5d91bb26] for JDBC transaction
+2026-09-16 16:19:43.127 [http-nio-8082-exec-6] DEBUG o.s.jdbc.support.JdbcTransactionManager-Switching JDBC Connection [HikariProxyConnection@1644586781 wrapping com.mysql.cj.jdbc.ConnectionImpl@5d91bb26] to manual commit
+2026-09-16 16:19:43.128 [http-nio-8082-exec-6] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-==>  Preparing: select u.password_hash from user u where id=?
+2026-09-16 16:19:43.128 [http-nio-8082-exec-6] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-==> Parameters: 10(Long)
+2026-09-16 16:19:43.129 [http-nio-8082-exec-6] DEBUG com.tekram.mapper.UserMapper.selectPasswdById-<==      Total: 1
+2026-09-16 16:19:43.285 [http-nio-8082-exec-6] DEBUG com.tekram.mapper.UserMapper.updatePasswdById-==>  Preparing: update user SET password_hash=? where id=?
+2026-09-16 16:19:43.285 [http-nio-8082-exec-6] DEBUG com.tekram.mapper.UserMapper.updatePasswdById-==> Parameters: $2a$10$Oh7uRPAqZtmFXAOghCWv..gPsYc12.U.CVRpQbUtEV2qopJ.frQiK(String), 10(Long)
+2026-09-16 16:19:43.291 [http-nio-8082-exec-6] DEBUG com.tekram.mapper.UserMapper.updatePasswdById-<==    Updates: 1
+2026-09-16 16:19:43.291 [http-nio-8082-exec-6] DEBUG o.s.jdbc.support.JdbcTransactionManager-Initiating transaction commit
+2026-09-16 16:19:43.291 [http-nio-8082-exec-6] DEBUG o.s.jdbc.support.JdbcTransactionManager-Committing JDBC transaction on Connection [HikariProxyConnection@1644586781 wrapping com.mysql.cj.jdbc.ConnectionImpl@5d91bb26]
+2026-09-16 16:19:43.297 [http-nio-8082-exec-6] DEBUG o.s.jdbc.support.JdbcTransactionManager-Releasing JDBC Connection [HikariProxyConnection@1644586781 wrapping com.mysql.cj.jdbc.ConnectionImpl@5d91bb26] after transaction
+2026-09-16 16:20:12.233 [SpringApplicationShutdownHook] INFO  org.springframework.boot.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-16 16:20:12.358 [tomcat-shutdown] INFO  org.springframework.boot.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-09-16 16:20:12.394 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-09-16 16:20:12.442 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-09-16 16:44:58.861 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 19312 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 16:44:58.876 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 16:45:00.711 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 16:45:00.727 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 16:45:00.746 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 16:45:00.746 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 16:45:00.839 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 1910 ms
+2026-09-16 16:45:01.988 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8082"]
+2026-09-16 16:45:02.023 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat started on port 8082 (http) with context path '/'
+2026-09-16 16:45:02.029 [main] INFO  com.tekram.MarketApplication-Started MarketApplication in 3.898 seconds (process running for 6.354)
+2026-09-16 16:45:59.099 [SpringApplicationShutdownHook] INFO  org.springframework.boot.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-16 16:45:59.281 [tomcat-shutdown] INFO  org.springframework.boot.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-09-16 16:46:14.864 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 42540 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 16:46:14.885 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 16:46:16.873 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 16:46:16.907 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 16:46:16.910 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 16:46:16.910 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 16:46:16.986 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 1993 ms
+2026-09-16 16:46:18.151 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8082"]
+2026-09-16 16:46:18.214 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat started on port 8082 (http) with context path '/'
+2026-09-16 16:46:18.230 [main] INFO  com.tekram.MarketApplication-Started MarketApplication in 4.426 seconds (process running for 7.456)
+2026-09-16 16:46:43.302 [http-nio-8082-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-16 16:46:43.303 [http-nio-8082-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-09-16 16:46:43.307 [http-nio-8082-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2026-09-16 16:46:44.021 [http-nio-8082-exec-2] INFO  com.tekram.controller.UserController-listAddress:page=1, pageSize=10
+2026-09-16 16:46:44.189 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-09-16 16:46:45.495 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3ea5ad94
+2026-09-16 16:46:45.500 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-09-16 16:46:45.517 [http-nio-8082-exec-2] DEBUG c.tekram.mapper.UserMapper.selectAddressById_COUNT-==>  Preparing: select count(0) from ( select a.* from address a where user_id={userId} ) tmp_count
+2026-09-16 16:46:45.565 [http-nio-8082-exec-2] DEBUG c.tekram.mapper.UserMapper.selectAddressById_COUNT-==> Parameters: 
+2026-09-16 16:46:46.019 [http-nio-8082-exec-2] ERROR com.tekram.handler.GlobalExceptionHandler-Unhandled request exception
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '}
+ ) tmp_count' at line 2
+### The error may exist in file [D:\JavaLearn\second-hand-market\market-parent\trading-user\target\classes\com\tekram\mapper\UserMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select count(0) from (  select a.* from address a where user_id={userId}  ) tmp_count
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '}
+ ) tmp_count' at line 2
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:244)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:102)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:362)
+	at jdk.proxy2/jdk.proxy2.$Proxy69.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:209)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy73.selectAddressById(Unknown Source)
+	at com.tekram.service.impl.UserServiceImpl.getAddress(UserServiceImpl.java:63)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:715)
+	at com.tekram.service.impl.UserServiceImpl$$SpringCGLIB$$0.getAddress(<generated>)
+	at com.tekram.controller.UserController.listAddress(UserController.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '}
+ ) tmp_count' at line 2
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:383)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy88.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at com.github.pagehelper.util.ExecutorUtil.executeAutoCount(ExecutorUtil.java:169)
+	at com.github.pagehelper.PageInterceptor.count(PageInterceptor.java:251)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:154)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy86.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:348)
+	... 61 common frames omitted
+2026-09-16 16:48:25.753 [SpringApplicationShutdownHook] INFO  org.springframework.boot.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-16 16:48:26.971 [tomcat-shutdown] INFO  org.springframework.boot.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-09-16 16:48:27.096 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-09-16 16:48:27.502 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-09-16 16:48:45.670 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 3964 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 16:48:45.676 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 16:48:48.659 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 16:48:48.686 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 16:48:48.690 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 16:48:48.690 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 16:48:48.781 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 2990 ms
+2026-09-16 16:48:49.937 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8082"]
+2026-09-16 16:48:49.990 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat started on port 8082 (http) with context path '/'
+2026-09-16 16:48:49.999 [main] INFO  com.tekram.MarketApplication-Started MarketApplication in 5.464 seconds (process running for 11.933)
+2026-09-16 16:51:02.236 [http-nio-8082-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-16 16:51:02.236 [http-nio-8082-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-09-16 16:51:02.238 [http-nio-8082-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2026-09-16 16:51:02.785 [http-nio-8082-exec-2] INFO  com.tekram.controller.UserController-listAddress:page=1, pageSize=10
+2026-09-16 16:51:02.913 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-09-16 16:51:03.781 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@605dafab
+2026-09-16 16:51:03.783 [http-nio-8082-exec-2] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-09-16 16:51:03.795 [http-nio-8082-exec-2] DEBUG c.tekram.mapper.UserMapper.selectAddressById_COUNT-==>  Preparing: SELECT count(0) FROM address a WHERE user_id = ?
+2026-09-16 16:51:03.823 [http-nio-8082-exec-2] DEBUG c.tekram.mapper.UserMapper.selectAddressById_COUNT-==> Parameters: 10(Long)
+2026-09-16 16:51:03.859 [http-nio-8082-exec-2] DEBUG c.tekram.mapper.UserMapper.selectAddressById_COUNT-<==      Total: 1
+2026-09-16 16:51:39.410 [http-nio-8082-exec-3] INFO  com.tekram.controller.UserController-listAddress:page=1, pageSize=10
+2026-09-16 16:51:39.412 [http-nio-8082-exec-3] DEBUG c.tekram.mapper.UserMapper.selectAddressById_COUNT-==>  Preparing: SELECT count(0) FROM address a WHERE user_id = ?
+2026-09-16 16:51:39.431 [http-nio-8082-exec-3] DEBUG c.tekram.mapper.UserMapper.selectAddressById_COUNT-==> Parameters: 10(Long)
+2026-09-16 16:51:39.433 [http-nio-8082-exec-3] DEBUG c.tekram.mapper.UserMapper.selectAddressById_COUNT-<==      Total: 1
+2026-09-16 16:51:39.436 [http-nio-8082-exec-3] DEBUG com.tekram.mapper.UserMapper.selectAddressById-==>  Preparing: select a.* from address a where user_id=? LIMIT ?
+2026-09-16 16:51:39.436 [http-nio-8082-exec-3] DEBUG com.tekram.mapper.UserMapper.selectAddressById-==> Parameters: 10(Long), 10(Integer)
+2026-09-16 16:51:39.459 [http-nio-8082-exec-3] DEBUG com.tekram.mapper.UserMapper.selectAddressById-<==      Total: 1
+2026-09-16 16:53:13.833 [SpringApplicationShutdownHook] INFO  org.springframework.boot.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-16 16:53:14.026 [tomcat-shutdown] INFO  org.springframework.boot.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-09-16 16:53:14.055 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-09-16 16:53:14.098 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-09-16 16:58:20.381 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 31800 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 16:58:20.439 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 16:58:25.850 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 16:58:25.933 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 16:58:25.976 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 16:58:25.977 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 16:58:26.064 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 5562 ms
+2026-09-16 16:58:28.116 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8082"]
+2026-09-16 16:58:28.223 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat started on port 8082 (http) with context path '/'
+2026-09-16 16:58:28.231 [main] INFO  com.tekram.MarketApplication-Started MarketApplication in 9.233 seconds (process running for 11.335)
+2026-09-16 16:58:52.412 [http-nio-8082-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-16 16:58:52.413 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-09-16 16:58:52.414 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2026-09-16 16:58:58.522 [http-nio-8082-exec-4] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-09-16 16:58:59.539 [http-nio-8082-exec-4] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@682686f7
+2026-09-16 16:58:59.542 [http-nio-8082-exec-4] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-09-16 16:58:59.552 [http-nio-8082-exec-4] DEBUG c.t.mapper.UserMapper.selectUserByAccountNumber-==>  Preparing: select u.* from user u WHERE account_number = ?
+2026-09-16 16:58:59.580 [http-nio-8082-exec-4] DEBUG c.t.mapper.UserMapper.selectUserByAccountNumber-==> Parameters: 13800000077(String)
+2026-09-16 16:58:59.635 [http-nio-8082-exec-4] DEBUG c.t.mapper.UserMapper.selectUserByAccountNumber-<==      Total: 1
+2026-09-16 16:59:15.628 [http-nio-8082-exec-5] INFO  com.tekram.controller.UserController-listAddress:page=1, pageSize=10
+2026-09-16 16:59:15.695 [http-nio-8082-exec-5] DEBUG c.tekram.mapper.UserMapper.selectAddressById_COUNT-==>  Preparing: SELECT count(0) FROM address a WHERE user_id = ?
+2026-09-16 16:59:15.696 [http-nio-8082-exec-5] DEBUG c.tekram.mapper.UserMapper.selectAddressById_COUNT-==> Parameters: 10(Long)
+2026-09-16 16:59:15.706 [http-nio-8082-exec-5] DEBUG c.tekram.mapper.UserMapper.selectAddressById_COUNT-<==      Total: 1
+2026-09-16 16:59:15.707 [http-nio-8082-exec-5] DEBUG com.tekram.mapper.UserMapper.selectAddressById-==>  Preparing: select a.* from address a where user_id=? LIMIT ?
+2026-09-16 16:59:15.708 [http-nio-8082-exec-5] DEBUG com.tekram.mapper.UserMapper.selectAddressById-==> Parameters: 10(Long), 10(Integer)
+2026-09-16 16:59:15.710 [http-nio-8082-exec-5] DEBUG com.tekram.mapper.UserMapper.selectAddressById-<==      Total: 1
+2026-09-16 17:14:42.417 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2026-09-16 17:14:43.915 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Acquired Connection [HikariProxyConnection@5313207 wrapping com.mysql.cj.jdbc.ConnectionImpl@56835f2f] for JDBC transaction
+2026-09-16 17:14:43.923 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Switching JDBC Connection [HikariProxyConnection@5313207 wrapping com.mysql.cj.jdbc.ConnectionImpl@56835f2f] to manual commit
+2026-09-16 17:14:44.026 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.212 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.238 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.291 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.302 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.312 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.325 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.338 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.354 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.365 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.380 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.390 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.399 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.412 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.426 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.439 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.455 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.463 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.475 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.483 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.495 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating in existing transaction
+2026-09-16 17:14:44.503 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Participating transaction failed - marking existing transaction as rollback-only
+2026-09-16 17:14:44.504 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Setting JDBC transaction [HikariProxyConnection@5313207 wrapping com.mysql.cj.jdbc.ConnectionImpl@56835f2f] rollback-only
+2026-09-16 17:14:44.507 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Transactional code has requested rollback
+2026-09-16 17:14:44.509 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Initiating transaction rollback
+2026-09-16 17:14:44.510 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Rolling back JDBC transaction on Connection [HikariProxyConnection@5313207 wrapping com.mysql.cj.jdbc.ConnectionImpl@56835f2f]
+2026-09-16 17:14:44.529 [main] DEBUG o.s.jdbc.support.JdbcTransactionManager-Releasing JDBC Connection [HikariProxyConnection@5313207 wrapping com.mysql.cj.jdbc.ConnectionImpl@56835f2f] after transaction
+2026-09-16 17:30:45.723 [SpringApplicationShutdownHook] INFO  org.springframework.boot.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-16 17:30:45.913 [tomcat-shutdown] INFO  org.springframework.boot.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-09-16 17:30:45.969 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-09-16 17:30:45.994 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-09-16 17:54:26.352 [main] INFO  com.tekram.MarketApplication-Starting MarketApplication using Java 17.0.12 with PID 17332 (D:\JavaLearn\second-hand-market\market-parent\trading-app\target\classes started by YinQican in D:\JavaLearn\second-hand-market)
+2026-09-16 17:54:26.365 [main] INFO  com.tekram.MarketApplication-No active profile set, falling back to 1 default profile: "default"
+2026-09-16 17:54:28.176 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat initialized with port 8082 (http)
+2026-09-16 17:54:28.194 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8082"]
+2026-09-16 17:54:28.196 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-09-16 17:54:28.197 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16 17:54:28.268 [main] INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer-Root WebApplicationContext: initialization completed in 1781 ms
+2026-09-16 17:54:30.005 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8082"]
+2026-09-16 17:54:30.058 [main] INFO  org.springframework.boot.tomcat.TomcatWebServer-Tomcat started on port 8082 (http) with context path '/'
+2026-09-16 17:54:30.068 [main] INFO  com.tekram.MarketApplication-Started MarketApplication in 4.826 seconds (process running for 6.648)
+2026-09-16 17:54:56.106 [http-nio-8082-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-16 17:54:56.106 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-09-16 17:54:56.107 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2026-09-16 17:54:56.346 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-09-16 17:54:57.490 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@695acbc4
+2026-09-16 17:54:57.494 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-09-16 17:54:57.504 [http-nio-8082-exec-1] DEBUG c.t.mapper.UserMapper.selectUserByAccountNumber-==>  Preparing: select u.* from user u WHERE account_number = ?
+2026-09-16 17:54:57.537 [http-nio-8082-exec-1] DEBUG c.t.mapper.UserMapper.selectUserByAccountNumber-==> Parameters: 13800000077(String)
+2026-09-16 17:54:57.673 [http-nio-8082-exec-1] DEBUG c.t.mapper.UserMapper.selectUserByAccountNumber-<==      Total: 1
+2026-09-16 17:55:32.284 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Creating new transaction with name [com.tekram.service.impl.AddressServiceImpl.createAddress]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2026-09-16 17:55:32.302 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Acquired Connection [HikariProxyConnection@1747634365 wrapping com.mysql.cj.jdbc.ConnectionImpl@695acbc4] for JDBC transaction
+2026-09-16 17:55:32.304 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Switching JDBC Connection [HikariProxyConnection@1747634365 wrapping com.mysql.cj.jdbc.ConnectionImpl@695acbc4] to manual commit
+2026-09-16 17:55:32.308 [http-nio-8082-exec-2] DEBUG c.t.mapper.AddressMapper.selectUserStatusForUpdate-==>  Preparing: select user_status from user where id = ? for update
+2026-09-16 17:55:32.309 [http-nio-8082-exec-2] DEBUG c.t.mapper.AddressMapper.selectUserStatusForUpdate-==> Parameters: 10(Long)
+2026-09-16 17:55:32.314 [http-nio-8082-exec-2] DEBUG c.t.mapper.AddressMapper.selectUserStatusForUpdate-<==      Total: 1
+2026-09-16 17:55:32.316 [http-nio-8082-exec-2] DEBUG c.t.mapper.AddressMapper.countAddressesByUserId-==>  Preparing: select count(*) from address where user_id = ?
+2026-09-16 17:55:32.317 [http-nio-8082-exec-2] DEBUG c.t.mapper.AddressMapper.countAddressesByUserId-==> Parameters: 10(Long)
+2026-09-16 17:55:32.344 [http-nio-8082-exec-2] DEBUG c.t.mapper.AddressMapper.countAddressesByUserId-<==      Total: 1
+2026-09-16 17:55:32.344 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.AddressMapper.insertAddress-==>  Preparing: insert into address (user_id, consignee_name, consignee_phone, province_name, city_name, region_name, detail_address, default_flag, create_time, update_time) values (?, ?, ?, ?, ?, ?, ?, ?, current_timestamp, current_timestamp)
+2026-09-16 17:55:32.347 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.AddressMapper.insertAddress-==> Parameters: 10(Long), 练习用户(String), 13800000001(String), 练习校区(String), 北区(String), 一号楼(String), 101 室(String), 0(Byte)
+2026-09-16 17:55:32.360 [http-nio-8082-exec-2] DEBUG com.tekram.mapper.AddressMapper.insertAddress-<==    Updates: 1
+2026-09-16 17:55:32.363 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Initiating transaction commit
+2026-09-16 17:55:32.363 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Committing JDBC transaction on Connection [HikariProxyConnection@1747634365 wrapping com.mysql.cj.jdbc.ConnectionImpl@695acbc4]
+2026-09-16 17:55:32.377 [http-nio-8082-exec-2] DEBUG o.s.jdbc.support.JdbcTransactionManager-Releasing JDBC Connection [HikariProxyConnection@1747634365 wrapping com.mysql.cj.jdbc.ConnectionImpl@695acbc4] after transaction
+2026-09-16 17:56:41.137 [http-nio-8082-exec-9] DEBUG o.s.jdbc.support.JdbcTransactionManager-Creating new transaction with name [com.tekram.service.impl.AddressServiceImpl.createAddress]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2026-09-16 17:56:41.138 [http-nio-8082-exec-9] DEBUG o.s.jdbc.support.JdbcTransactionManager-Acquired Connection [HikariProxyConnection@986628402 wrapping com.mysql.cj.jdbc.ConnectionImpl@695acbc4] for JDBC transaction
+2026-09-16 17:56:41.138 [http-nio-8082-exec-9] DEBUG o.s.jdbc.support.JdbcTransactionManager-Switching JDBC Connection [HikariProxyConnection@986628402 wrapping com.mysql.cj.jdbc.ConnectionImpl@695acbc4] to manual commit
+2026-09-16 17:56:41.139 [http-nio-8082-exec-9] DEBUG c.t.mapper.AddressMapper.selectUserStatusForUpdate-==>  Preparing: select user_status from user where id = ? for update
+2026-09-16 17:56:41.139 [http-nio-8082-exec-9] DEBUG c.t.mapper.AddressMapper.selectUserStatusForUpdate-==> Parameters: 10(Long)
+2026-09-16 17:56:41.142 [http-nio-8082-exec-9] DEBUG c.t.mapper.AddressMapper.selectUserStatusForUpdate-<==      Total: 1
+2026-09-16 17:56:41.144 [http-nio-8082-exec-9] DEBUG c.t.mapper.AddressMapper.countAddressesByUserId-==>  Preparing: select count(*) from address where user_id = ?
+2026-09-16 17:56:41.248 [http-nio-8082-exec-9] DEBUG c.t.mapper.AddressMapper.countAddressesByUserId-==> Parameters: 10(Long)
+2026-09-16 17:56:41.249 [http-nio-8082-exec-9] DEBUG c.t.mapper.AddressMapper.countAddressesByUserId-<==      Total: 1
+2026-09-16 17:56:41.250 [http-nio-8082-exec-9] DEBUG com.tekram.mapper.AddressMapper.insertAddress-==>  Preparing: insert into address (user_id, consignee_name, consignee_phone, province_name, city_name, region_name, detail_address, default_flag, create_time, update_time) values (?, ?, ?, ?, ?, ?, ?, ?, current_timestamp, current_timestamp)
+2026-09-16 17:56:41.252 [http-nio-8082-exec-9] DEBUG com.tekram.mapper.AddressMapper.insertAddress-==> Parameters: 10(Long), 练习用户(String), 13800000001(String), 练习校区(String), 北区(String), 一号楼(String), 101 室(String), 0(Byte)
+2026-09-16 17:56:41.255 [http-nio-8082-exec-9] DEBUG com.tekram.mapper.AddressMapper.insertAddress-<==    Updates: 1
+2026-09-16 17:56:41.255 [http-nio-8082-exec-9] DEBUG o.s.jdbc.support.JdbcTransactionManager-Initiating transaction commit
+2026-09-16 17:56:41.255 [http-nio-8082-exec-9] DEBUG o.s.jdbc.support.JdbcTransactionManager-Committing JDBC transaction on Connection [HikariProxyConnection@986628402 wrapping com.mysql.cj.jdbc.ConnectionImpl@695acbc4]
+2026-09-16 17:56:41.261 [http-nio-8082-exec-9] DEBUG o.s.jdbc.support.JdbcTransactionManager-Releasing JDBC Connection [HikariProxyConnection@986628402 wrapping com.mysql.cj.jdbc.ConnectionImpl@695acbc4] after transaction
+2026-09-16 17:57:08.072 [http-nio-8082-exec-10] INFO  com.tekram.controller.AddressController-listAddress:page=1, pageSize=10
+2026-09-16 17:57:08.373 [http-nio-8082-exec-10] DEBUG c.t.mapper.AddressMapper.selectAddressById_COUNT-==>  Preparing: SELECT count(0) FROM address a WHERE user_id = ?
+2026-09-16 17:57:08.373 [http-nio-8082-exec-10] DEBUG c.t.mapper.AddressMapper.selectAddressById_COUNT-==> Parameters: 10(Long)
+2026-09-16 17:57:08.375 [http-nio-8082-exec-10] DEBUG c.t.mapper.AddressMapper.selectAddressById_COUNT-<==      Total: 1
+2026-09-16 17:57:08.380 [http-nio-8082-exec-10] DEBUG com.tekram.mapper.AddressMapper.selectAddressById-==>  Preparing: select a.* from address a where user_id=? LIMIT ?
+2026-09-16 17:57:08.381 [http-nio-8082-exec-10] DEBUG com.tekram.mapper.AddressMapper.selectAddressById-==> Parameters: 10(Long), 10(Integer)
+2026-09-16 17:57:08.390 [http-nio-8082-exec-10] DEBUG com.tekram.mapper.AddressMapper.selectAddressById-<==      Total: 3
+2026-09-16 17:57:25.063 [SpringApplicationShutdownHook] INFO  org.springframework.boot.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-16 17:57:25.214 [tomcat-shutdown] INFO  org.springframework.boot.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-09-16 17:57:25.242 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-09-16 17:57:25.290 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.

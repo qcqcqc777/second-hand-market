@@ -4,19 +4,52 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tekram.mapper.UserMapper">
     <!--    新增用户-注册-->
-    <insert id="addUser">
+    <insert id="insertUser">
         insert into user(account_number,password_hash,nickname)values(
         #{accountNumber},#{passwordHash},#{nickname})
     </insert>
-    <!--    根据账号和密码查询用户-登录-->
-    <select id="getLoginInfoByAccountAndPassward" resultType="com.tekram.pojo.User">
+    <!--    根据账号查询用户-登录-->
+    <select id="selectUserByAccountNumber" resultType="com.tekram.pojo.User">
         select u.* from user u
         <where>
             <if test="accountNumber!=null and accountNumber!=''">
                 account_number = #{accountNumber}
             </if>
         </where>
-
     </select>
+    <!--    根据id查询用户信息-->
+    <select id="selectUserById" resultType="com.tekram.pojo.UserVO">
+        select u.id,u.account_number,u.nickname,u.avatar_url,
+        u.user_status,u.create_time
+        from user u where id=#{id}
+    </select>
+    <!--    更新用户信息-->
+    <update id="updateUserProfileById">
+        update user
+        <set>
+            <if test="nickname!=null and nickname!=''">
+                nickname=#{nickname}
+            </if>
+            <if test="avatarUrl!=null and avatarUrl!=''">
+                and avatar_url =#{avatarUrl}
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+    <!--    修改密码-->
+    <update id="updatePasswordHashById">
+        update user
+        <set>
+            password_hash=#{passwordHash}
+        </set>
+        where id=#{id}
+    </update>
+    <!--    查询密码-->
+    <select id="selectPasswordHashById" resultType="String">
+        select u.password_hash from user u where id=#{id}
+    </select>
+
+
+
 
 </mapper>

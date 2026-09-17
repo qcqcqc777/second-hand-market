@@ -26,12 +26,12 @@ public class AuthServiceImpl implements AuthService {
         user.setAccountNumber(dto.getAccountNumber());
         user.setNickname(dto.getNickname());
         user.setPasswordHash(passwordEncoder.encode(dto.getPassword()));
-        userMapper.addUser(user);
+        userMapper.insertUser(user);
     }
 
     @Override
     public LoginVO login(LoginDTO dto) {
-        User userLogin = userMapper.getLoginInfoByAccountAndPassward(dto);
+        User userLogin = userMapper.selectUserByAccountNumber(dto);
         if (userLogin == null || !passwordEncoder.matches(dto.getPassword(), userLogin.getPasswordHash())) {
             // 返回“账号或密码错误”
             return null;

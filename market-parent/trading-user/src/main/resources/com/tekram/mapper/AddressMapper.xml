@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tekram.mapper.AddressMapper">
+    <!--    查询地址-->
+    <select id="selectAddressById" resultType="com.tekram.pojo.AddressVO">
+        select a.* from address a where user_id=#{userId}
+    </select>
+    <!-- 锁定用户行：即使地址簿为空，也能串行处理同一用户的新增请求。 -->
+    <select id="selectUserStatusForUpdate" resultType="java.lang.Byte">
+        select user_status from user where id = #{userId} for update
+    </select>
+    <select id="countAddressesByUserId" resultType="int">
+        select count(*) from address where user_id = #{userId}
+    </select>
+    <select id="selectOwnedAddressIdForUpdate" resultType="java.lang.Long">
+        select id from address
+        where user_id = #{userId} and id = #{addressId} for update
+    </select>
+    <update id="clearDefaultByUserId">
+        update address set default_flag = 0, update_time = current_timestamp
+        where user_id = #{userId} and default_flag = 1
+    </update>
+    <insert id="insertAddress" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into address (user_id, consignee_name, consignee_phone,
+        province_name, city_name, region_name, detail_address, default_flag,
+        create_time, update_time)
+        values (#{userId}, #{consigneeName}, #{consigneePhone}, #{provinceName},
+        #{cityName}, #{regionName}, #{detailAddress}, #{defaultFlag},
+        current_timestamp, current_timestamp)
+    </insert>
+    <!--    修改地址-->
+    <update id="updateAddress" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        update address
+        <set>
+            consignee_name=#{consigneeName},consignee_phone=#{consigneePhone},
+            province_name=#{provinceName},city_name=#{cityName},region_name=#{regionName},
+            detail_address=#{detailAddress},default_flag=#{defaultFlag},update_time = current_timestamp
+        </set>
+        where user_id=#{userId} and id=#{id}
+
+    </update>
+    <!--    删除地址-->
+    <delete id="deleteAddress">
+        delete from address where id=#{id} and user_id =#{userId}
+    </delete>
+</mapper>
