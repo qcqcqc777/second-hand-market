@@ -1,11 +1,9 @@
-package com.tekram.service;
+package com.tekram.service.impl;
 
-import com.github.pagehelper.PageHelper;
 import com.tekram.mapper.CategoryMapper;
 import com.tekram.pojo.Category;
 import com.tekram.response.PageResult;
 import com.tekram.service.CategoryService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

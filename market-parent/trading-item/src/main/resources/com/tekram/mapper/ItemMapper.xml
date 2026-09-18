@@ -20,4 +20,42 @@
     <select id="getItemById" resultType="com.tekram.pojo.Item">
         select i.* from item i where id=#{id}
     </select>
+    <!-- 批量读取当前页卖家的公开信息，避免逐个商品查询。 -->
+    <select id="listSellersByIds" resultType="com.tekram.pojo.ItemVO$SellerVO">
+        select id, nickname, avatar_url from user
+        where id in
+        <foreach collection="userIds" item="userId" open="(" separator="," close=")">
+            #{userId}
+        </foreach>
+    </select>
+    <!--    根据用户id查询发布商品列表-->
+    <select id="getItemsByUserId" resultType="com.tekram.pojo.Item">
+        select item.* from item where user_id=#{userId}
+    </select>
+    <!--    新增商品-->
+    <insert id="insertItem" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into item(user_id,idle_name,idle_details,idle_price,category_id,idle_place,picture_list,create_time,
+        update_time)
+        values(#{userId},#{idleName},#{idleDetails},#{idlePrice},#{categoryId},#{idlePlace},#{pictureList},current_timestamp,
+        current_timestamp)
+    </insert>
+    <!--    修改商品-->
+    <update id="updateItem">
+        update item
+        <set>
+            idle_name=#{idleName},idle_details=#{idleDetails},
+            idle_price=#{idlePrice},category_id=#{categoryId},
+            idle_place=#{idlePlace},picture_list=#{pictureList},
+            create_time=current_timestamp,version=version+1
+        </set>
+        where id=#{id} and user_id=#{userId}
+    </update>
+    <update id="updateItemStatus">
+        update item
+        <set>
+            item_status=#{dto.status.code},
+            version=version+1
+        </set>
+        where id=#{itemId} and user_id=#{userId} and  version = #{dto.version}
+    </update>
 </mapper>

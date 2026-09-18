@@ -14,20 +14,25 @@ import java.io.IOException;
 public class LoginInterceptor implements HandlerInterceptor {
 
     @Override
-    public boolean preHandle(
-            HttpServletRequest request,
-            HttpServletResponse response,
-            Object handler) throws IOException {
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
 
         // 放行浏览器跨域预检；跨域配置仍需单独设置
         if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
             return true;
         }
 
+        // 同一路径按请求方式区分：查询商品公开，发布商品仍需登录。
+        String method = request.getMethod();
+        String path = request.getRequestURI().substring(request.getContextPath().length());
+        // 公开查询：商品列表、商品详情
+        if ("GET".equalsIgnoreCase(method) && ("/items".equals(path) || path.matches("/items/[0-9]+"))) {
+            return true;
+        }
+
+        // 下面继续原来的 Token 校验
         String authorization = request.getHeader("Authorization");
 
-        if (authorization == null ||
-                !authorization.startsWith("Bearer ")) {
+        if (authorization == null || !authorization.startsWith("Bearer ")) {
             return unauthorized(request, response);
         }
 
@@ -57,13 +62,11 @@ public class LoginInterceptor implements HandlerInterceptor {
         }
     }
 
-    private boolean unauthorized(
-            HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private boolean unauthorized(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         response.setContentType("application/json;charset=UTF-8");
-        boolean createAddress = "POST".equalsIgnoreCase(request.getMethod())
-                && "/users/me/addresses".equals(request.getRequestURI().substring(request.getContextPath().length()));
+        boolean createAddress = "POST".equalsIgnoreCase(request.getMethod()) && "/users/me/addresses".equals(request.getRequestURI().substring(request.getContextPath().length()));
         String message = createAddress ? "AUTH_REQUIRED" : "请先登录或重新登录";
         response.getWriter().write("{\"code\":0,\"msg\":\"" + message + "\",\"data\":null}");
         return false;
