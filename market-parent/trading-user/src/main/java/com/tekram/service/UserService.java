@@ -2,6 +2,7 @@ package com.tekram.service;
 import com.tekram.pojo.Address;
 import com.tekram.pojo.PasswordDTO;
 import com.tekram.pojo.User;
+import com.tekram.pojo.UserProfileDTO;
 import com.tekram.pojo.UserVO;
 import com.tekram.response.PageResult;
 
@@ -15,7 +16,7 @@ public interface UserService {
     /*
     修改用户信息
      */
-    UserVO updateUserProfile(User user);
+    UserVO updateUserProfile(UserProfileDTO dto, Long userId);
     /*
     修改密码
      */

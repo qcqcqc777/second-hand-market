@@ -28,10 +28,10 @@
         update user
         <set>
             <if test="nickname!=null and nickname!=''">
-                nickname=#{nickname}
+                nickname=#{nickname},
             </if>
             <if test="avatarUrl!=null and avatarUrl!=''">
-                and avatar_url =#{avatarUrl}
+                avatar_url =#{avatarUrl},
             </if>
         </set>
         where id=#{id}

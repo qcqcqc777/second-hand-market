@@ -10,6 +10,7 @@ import com.tekram.pojo.ItemStatusUpdateDTO;
 import com.tekram.pojo.ItemVO;
 import com.tekram.response.PageResult;
 import com.tekram.service.ItemService;
+import com.tekram.util.ImageReference;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,6 +33,8 @@ public class ItemServiceImpl implements ItemService {
 
     @Autowired
     private ObjectMapper objectMapper;//负责转换数据格式
+    @Autowired
+    private ImageReference imageReference;
 
 
     @Override
@@ -82,7 +85,7 @@ public class ItemServiceImpl implements ItemService {
         BeanUtils.copyProperties(dto, item);
         // DTO 使用列表，数据库保存 JSON 文本；BeanUtils 不会转换不同类型的属性。
         item.setPictureList(objectMapper.writeValueAsString(
-                dto.getPictureList() == null ? List.of() : dto.getPictureList()));
+                imageReference.toKeys(dto.getPictureList())));
         item.setUserId(userId);
         itemMapper.insertItem(item);
         ItemVO itemVO = getItemById(item.getId());
@@ -101,7 +104,7 @@ public class ItemServiceImpl implements ItemService {
         item.setUserId(userId);
         item.setId(itemId);
         item.setPictureList(objectMapper.writeValueAsString(
-                dto.getPictureList() == null ? List.of() : dto.getPictureList()));
+                imageReference.toKeys(dto.getPictureList())));
         itemMapper.updateItem(item);
         ItemVO itemVO = getItemById(itemId);
         return itemVO;
@@ -147,6 +150,9 @@ public class ItemServiceImpl implements ItemService {
         vo.setCategoryId(item.getCategoryId());
         vo.setIdlePlace(item.getIdlePlace());
         vo.setPictureList(parsePictureList(item.getPictureList()));
+        if (seller != null) {
+            seller.setAvatarUrl(imageReference.toUrl(seller.getAvatarUrl()));
+        }
         vo.setSeller(seller);
         vo.setItemStatus(item.getItemStatus());
         vo.setModerationStatus(item.getModerationStatus());
@@ -170,7 +176,7 @@ public class ItemServiceImpl implements ItemService {
             if (!image.isString()) {
                 throw new IllegalArgumentException("pictureList 中的图片路径必须是字符串");
             }
-            paths.add(image.asString());
+            paths.add(imageReference.toUrl(image.asString()));
         }
         return paths;
     }

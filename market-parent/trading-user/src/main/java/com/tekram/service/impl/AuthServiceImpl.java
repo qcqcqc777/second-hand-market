@@ -7,6 +7,7 @@ import com.tekram.pojo.RegisterDTO;
 import com.tekram.pojo.User;
 import com.tekram.service.AuthService;
 import com.tekram.util.JwtUtils;
+import com.tekram.util.ImageReference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,8 @@ public class AuthServiceImpl implements AuthService {
     private UserMapper userMapper;
     @Autowired
     private PasswordEncoder passwordEncoder;
+    @Autowired
+    private ImageReference imageReference;
 
     @Override
     public void register(RegisterDTO dto) {
@@ -42,7 +45,7 @@ public class AuthServiceImpl implements AuthService {
             map.put("id", userLogin.getId());
             map.put("accountNumber", userLogin.getAccountNumber());
             String jwt = JwtUtils.generateJwt(map);
-            LoginVO loginInfo = new LoginVO(userLogin.getId(), userLogin.getAccountNumber(), userLogin.getNickname(), userLogin.getAvatarUrl(), jwt);
+            LoginVO loginInfo = new LoginVO(userLogin.getId(), userLogin.getAccountNumber(), userLogin.getNickname(), imageReference.toUrl(userLogin.getAvatarUrl()), jwt);
             return loginInfo;
         }
         return null;

@@ -3,6 +3,7 @@ package com.tekram.controller;
 import com.tekram.pojo.Address;
 import com.tekram.pojo.PasswordDTO;
 import com.tekram.pojo.User;
+import com.tekram.pojo.UserProfileDTO;
 import com.tekram.pojo.UserVO;
 import com.tekram.response.PageResult;
 import com.tekram.response.Result;
@@ -28,10 +29,9 @@ public class UserController {
     }
 
     @PutMapping
-    public Result updateMe(@RequestBody User user, @RequestAttribute("currentUserId") Long userId) {
+    public Result updateMe(@RequestBody UserProfileDTO dto, @RequestAttribute("currentUserId") Long userId) {
         log.info("updateMe:userId={}", userId);
-        user.setId(userId);
-        UserVO vo = userService.updateUserProfile(user);
+        UserVO vo = userService.updateUserProfile(dto, userId);
         return Result.success(vo);
     }
 
