@@ -25,7 +25,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         String method = request.getMethod();
         String path = request.getRequestURI().substring(request.getContextPath().length());
         // 公开查询：商品列表、商品详情
-        if ("GET".equalsIgnoreCase(method) && ("/items".equals(path) || path.matches("/items/[0-9]+"))) {
+        if ("GET".equalsIgnoreCase(method) && ("/items".equals(path) || path.matches("/items/[0-9]+") || path.matches("/items/[0-9]+/messages"))) {
             return true;
         }
 

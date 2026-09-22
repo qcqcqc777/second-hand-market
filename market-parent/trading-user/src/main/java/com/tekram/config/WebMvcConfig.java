@@ -17,6 +17,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
         registry.addInterceptor(loginInterceptor)
                 // 路径匹配不区分 HTTP 方法，GET /items 在 preHandle 中放行。
                 .addPathPatterns("/users/**", "/auth/logout",
-                        "/items/me", "/items", "/items/{itemId}/**");
+                        "/items/me", "/items", "/items/{itemId}", "/items/{itemId}/status", "/items/{itemId}/messages",
+                        "/messages/{messageId}");
     }
 }

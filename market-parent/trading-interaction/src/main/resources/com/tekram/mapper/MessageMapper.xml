@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tekram.mapper.MessageMapper">
+    <!--查询当前商品的留言列表-->
+    <select id="selectListMessages" resultType="com.tekram.pojo.Message">
+        select m.* from message m where m.item_id =#{itemId}
+        ORDER BY m.create_time DESC, m.id DESC
+    </select>
+    <!-- 批量读取当前商品留言用户的公开信息，避免逐个用户查询。 -->
+    <select id="selectAuthorsByIds" resultType="com.tekram.pojo.MessageVO$AuthorVO">
+        select id, nickname, avatar_url from user
+        where id in
+        <foreach collection="userIds" item="userId" open="(" separator="," close=")">
+            #{userId}
+        </foreach>
+    </select>
+    <!--    新增留言-->
+    <insert id="insertMessage" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into message(user_id,to_user_id,item_id,is_deleted,content,parent_id,create_time)
+        values(#{userId},#{toUserId},#{itemId},0,#{content},#{parentId},current_timestamp);
+    </insert>
+    <!--    根据id查询留言-->
+    <select id="selectMessageById" resultType="com.tekram.pojo.Message">
+        SELECT *
+        FROM message
+        WHERE id = #{id}
+    </select>
+    <!--    删除留言,逻辑删除-->
+    <update id="deleteMessage">
+        update message m
+        <set>
+            m.is_deleted=1,
+            m.delete_time=current_timestamp
+        </set>
+        where user_id=#{userId} and id=#{id}
+    </update>
+    <!--    查询我收到的留言-->
+    <select id="selectMyMessages" resultType="com.tekram.pojo.Message">
+        select m.* from message m where to_user_id=#{userId}
+    </select>
+</mapper>
