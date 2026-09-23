@@ -16,6 +16,12 @@
         select id from address
         where user_id = #{userId} and id = #{addressId} for update
     </select>
+    <select id="selectOwnedAddress" resultType="com.tekram.pojo.Address">
+        select *
+        from address
+        where user_id = #{userId}
+        and id = #{id}
+    </select>
     <update id="clearDefaultByUserId">
         update address set default_flag = 0, update_time = current_timestamp
         where user_id = #{userId} and default_flag = 1

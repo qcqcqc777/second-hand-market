@@ -20,6 +20,21 @@
     <select id="getItemById" resultType="com.tekram.pojo.Item">
         select i.* from item i where id=#{id}
     </select>
+    <!-- 订单状态转换统一先锁商品，再更新订单。 -->
+    <select id="getItemByIdForUpdate" resultType="com.tekram.pojo.Item">
+        select * from item where id = #{id} for update
+    </select>
+    <update id="occupyItem">
+        update item
+        set item_status = 3, version = version + 1, update_time = current_timestamp
+        where id = #{itemId} and version = #{version}
+          and item_status = 1 and moderation_status = 0 and is_deleted = 0
+    </update>
+    <update id="releaseOrderItem">
+        update item
+        set item_status = 1, version = version + 1, update_time = current_timestamp
+        where id = #{itemId} and item_status = 3
+    </update>
     <!-- 批量读取当前页卖家的公开信息，避免逐个商品查询。 -->
     <select id="listSellersByIds" resultType="com.tekram.pojo.ItemVO$SellerVO">
         select id, nickname, avatar_url from user

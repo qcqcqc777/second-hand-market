@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tekram.mapper.OrderAddressMapper">
+    <!--    新增订单地址-->
+    <insert id="insertOrderAddress">
+        insert into order_address(order_id,consignee_name,consignee_phone,detail_address,create_time)
+        values(#{orderAddress.orderId},#{orderAddress.consigneeName},#{orderAddress.consigneePhone},
+               #{orderAddress.detailAddress},current_timestamp)
+    </insert>
+    <select id="selectByOrderId" resultType="com.tekram.pojo.OrderAddress">
+        select id, order_id, consignee_name, consignee_phone, detail_address, create_time
+        from order_address
+        where order_id = #{orderId}
+    </select>
+    <select id="selectByOrderIds" resultType="com.tekram.pojo.OrderAddress">
+        select id, order_id, consignee_name, consignee_phone, detail_address, create_time
+        from order_address
+        <where>
+            <choose>
+                <when test="orderIds != null and orderIds.size() > 0">
+                    order_id in
+                    <foreach collection="orderIds" item="orderId" open="(" separator="," close=")">
+                        #{orderId}
+                    </foreach>
+                </when>
+                <otherwise>1 = 0</otherwise>
+            </choose>
+        </where>
+    </select>
+</mapper>

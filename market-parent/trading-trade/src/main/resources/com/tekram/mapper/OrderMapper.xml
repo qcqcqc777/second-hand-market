@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tekram.mapper.OrderMapper">
+    <!-- 新增订单：状态为待付款，30 分钟后过期；exclusive_item_id 由数据库生成。 -->
+    <insert id="insertOrder" parameterType="com.tekram.pojo.TradeOrder"
+            useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into trade_order (
+        order_number, buyer_id, seller_id, item_id,
+        item_name_snapshot, item_cover_snapshot, item_price_snapshot,
+        order_price, order_status, request_key, request_hash,
+        expire_time, version, create_time, update_time
+        ) values (
+        #{orderNumber}, #{buyerId}, #{sellerId}, #{itemId},
+        #{itemNameSnapshot}, #{itemCoverSnapshot}, #{itemPriceSnapshot},
+        #{orderPrice}, 0, #{requestKey}, #{requestHash},
+        date_add(current_timestamp, interval 30 minute), 0,
+        current_timestamp, current_timestamp
+        )
+    </insert>
+    <!--    根据requsetKey和buyerId查询旧订单-->
+    <select id="selectByRequestKey" resultType="com.tekram.pojo.TradeOrder">
+        SELECT *
+        FROM trade_order
+        WHERE buyer_id = #{buyerId}
+        AND request_key = #{requestKey}
+    </select>
+    <!--    根据订单id查询订单-->
+    <select id="selectByOrderId" resultType="com.tekram.pojo.TradeOrder">
+        select * from trade_order where id=#{orderId}
+    </select>
+    <!-- 按主键向后扫描，单笔失败不会挡住后面的订单；下轮从头重试。 -->
+    <select id="selectExpiredOrders" resultType="com.tekram.pojo.TradeOrder">
+        select id, item_id from trade_order
+        where order_status = 0 and expire_time &lt;= current_timestamp
+        and id &gt; #{afterId}
+        order by id
+        limit #{limit}
+    </select>
+    <!-- 扫描后可能已支付/取消，执行时再次检查状态和过期时间。 -->
+    <update id="cancelExpiredOrder">
+        update trade_order
+        set order_status = 4, cancel_type = 2, cancel_reason = '支付超时',
+        cancel_time = current_timestamp, update_time = current_timestamp,
+        version = version + 1
+        where id = #{orderId} and item_id = #{itemId}
+        and order_status = 0 and expire_time &lt;= current_timestamp
+    </update>
+    <insert id="insertTimeoutStatusLog">
+        insert into order_status_log
+        (order_id, from_status, to_status, order_version, operator_type,
+        operator_user_id, reason, create_time)
+        select id, 0, 4, version, 2, null, '支付超时', current_timestamp
+        from trade_order where id = #{orderId} and order_status = 4 and cancel_type = 2
+    </insert>
+
+    <!--    查询买家订单列表-->
+    <select id="selectBuyerOrders" resultType="com.tekram.pojo.TradeOrder">
+        select * from trade_order
+        <where>
+            buyer_id = #{buyerId}
+            <if test="status!=null">
+                and order_status = #{status}
+            </if>
+        </where>
+        order by create_time desc, id desc
+    </select>
+
+    <!--    查询卖家订单列表-->
+    <select id="selectSellerOrders" resultType="com.tekram.pojo.TradeOrder">
+        select * from trade_order
+        <where>
+            seller_id = #{sellerId}
+            <if test="status!=null">
+                and order_status = #{status}
+            </if>
+        </where>
+        order by create_time desc, id desc
+    </select>
+    <!--    修改订单状态为取消-->
+    <update id="updateOrderStatus">
+        update trade_order
+        <set>
+            order_status=4,
+            cancel_type=1,
+            cancel_reason=#{cancelReason},
+            cancel_time = current_timestamp,
+            update_time = current_timestamp,
+            version = version + 1
+        </set>
+        where id = #{orderId}
+        and buyer_id = #{userId}
+        and order_status = 0
+    </update>
+    <!--    修改订单为待收货-->
+    <update id="updateOrderRecieve">
+        update trade_order
+        <set>
+            order_status=2,
+            delivery_note=#{note},
+            delivery_time = current_timestamp,
+            update_time = current_timestamp,
+            version = version + 1
+        </set>
+        where id = #{orderId}
+        and seller_id = #{userId}
+        and order_status = 1
+    </update>
+    <!-- 已完成订单不重复更新，保留首次确认收货的完成时间和版本。 -->
+    <update id="updateOrderCompleted">
+        update trade_order
+        set order_status = 3,
+            complete_time = current_timestamp,
+            update_time = current_timestamp,
+            version = version + 1
+        where id = #{orderId}
+          and buyer_id = #{userId}
+          and order_status = 2
+    </update>
+</mapper>

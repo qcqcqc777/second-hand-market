@@ -51,6 +51,11 @@
             <artifactId>trading-interaction</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.tekram</groupId>
+            <artifactId>trading-trade</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

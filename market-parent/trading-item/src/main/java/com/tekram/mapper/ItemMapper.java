@@ -20,6 +20,11 @@ public interface ItemMapper {
     根据id查询商品-商品详情页
      */
     Item getItemById(@Param("id") Long id);
+    Item getItemByIdForUpdate(@Param("id") Long id);
+
+    int occupyItem(@Param("itemId") Long itemId, @Param("version") Integer version);
+
+    int releaseOrderItem(@Param("itemId") Long itemId);
     List<ItemVO.SellerVO> listSellersByIds(@Param("userIds") List<Long> userIds);
     /*
     根据用户id查询商品-我的发布列表

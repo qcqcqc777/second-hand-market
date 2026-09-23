@@ -26,4 +26,6 @@ public interface AddressMapper {
     int updateAddress(Address address);
     //删除地址
     int deleteAddress(@Param("id") Long id,@Param("userId") Long userId);
+    //根据addressId和userId查询地址
+    Address selectOwnedAddress(@Param("id")  Long id,@Param("userId") Long userId);
 }
